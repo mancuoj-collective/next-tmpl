@@ -1,14 +1,13 @@
 import '@/styles/globals.css'
 
 import type { Metadata } from 'next'
-import { Geist_Mono, Inter, Lora } from 'next/font/google'
+import { Inter, Lora } from 'next/font/google'
 
 import { cn } from '@/lib/utils'
 
 import { AppProvider } from './provider'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
 const lora = Lora({ subsets: ['latin'], variable: '--font-lora' })
 
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={cn(inter.variable, geistMono.variable, lora.variable)}>
+    <html lang="en" suppressHydrationWarning className={cn(inter.variable, lora.variable)}>
       <body className={cn('font-sans antialiased')}>
         <script
           dangerouslySetInnerHTML={{

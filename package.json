@@ -2,6 +2,10 @@
   "name": "next-tmpl",
   "scripts": {
     "build": "next build",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
     "dev": "next dev --turbopack",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
@@ -10,9 +14,12 @@
     "update": "taze major -wi"
   },
   "dependencies": {
+    "@libsql/client": "^0.14.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "@t3-oss/env-nextjs": "^0.11.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "drizzle-orm": "^0.36.3",
     "jotai": "^2.10.3",
     "jotai-dark": "^0.4.0",
     "jotai-effect": "^1.0.3",
@@ -33,6 +40,7 @@
     "@types/node": "^22.9.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "drizzle-kit": "^0.28.1",
     "eslint": "^9.15.0",
     "eslint-config-hyoban": "^3.1.13",
     "jiti": "^2.4.0",
@@ -41,6 +49,7 @@
     "simple-git-hooks": "^2.11.1",
     "tailwindcss": "^3.4.15",
     "taze": "^0.18.0",
+    "tsx": "^4.19.2",
     "typescript": "^5.6.3"
   },
   "simple-git-hooks": {
