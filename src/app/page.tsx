@@ -6,6 +6,7 @@ export default function LandingPage() {
     <div className="flex min-h-svh flex-col">
       <LandingHeader />
       <div className="flex flex-1 flex-col items-center justify-center">
+        <h1 className="mb-10 font-serif text-3xl font-semibold">Next Starter Template</h1>
         <div className="flex items-center gap-3">
           <Button>
             Get Started
