@@ -14,6 +14,8 @@ export default defineConfig(
   {
     rules: {
       'unicorn/expiring-todo-comments': 'off',
+      'tailwindcss/no-custom-classname': 'off',
+      'react-refresh/only-export-components': 'off',
     },
   },
 )
