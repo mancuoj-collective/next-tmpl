@@ -2,6 +2,7 @@ import '@/styles/globals.css'
 
 import type { Metadata } from 'next'
 import { Inter, Lora } from 'next/font/google'
+import Script from 'next/script'
 
 import { cn } from '@/lib/utils'
 
@@ -28,6 +29,7 @@ export default function RootLayout({
           }}
         />
         <AppProvider>{children}</AppProvider>
+        <Script src="https://umami.mancuoj.me/script.js" data-website-id="9cde861b-be6c-4678-81f5-0bb142d1da23" />
       </body>
     </html>
   )
