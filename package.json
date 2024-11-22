@@ -1,5 +1,6 @@
 {
   "name": "next-tmpl",
+  "packageManager": "pnpm@9.14.2",
   "scripts": {
     "build": "next build",
     "db:generate": "drizzle-kit generate",
@@ -19,7 +20,7 @@
     "@t3-oss/env-nextjs": "^0.11.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "drizzle-orm": "^0.36.3",
+    "drizzle-orm": "^0.36.4",
     "jotai": "^2.10.3",
     "jotai-dark": "^0.4.0",
     "jotai-effect": "^1.0.3",
