@@ -2,12 +2,11 @@ import { useAtom } from 'jotai'
 import { atomDark } from 'jotai-dark'
 
 const isDarkAtom = atomDark({
-  storageKey: 'next-tmpl-theme',
   disableTransition: true,
   disableTransitionExclude: ['.sun', '.moon'],
 })
 
-export function useTheme() {
+export function useDark() {
   const [isDark, setIsDark] = useAtom(isDarkAtom)
   return {
     isDark,

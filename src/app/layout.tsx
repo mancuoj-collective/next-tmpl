@@ -24,16 +24,16 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={cn(inter.variable, lora.variable)}>
-      <body className={cn('font-sans antialiased')}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn('font-sans antialiased', inter.variable, lora.variable)}>
+        {env.NODE_ENV === 'production' && (
+          <Script src={siteConfig.umamiUrl} data-website-id={siteConfig.umamiId} />
+        )}
         <script
           dangerouslySetInnerHTML={{
             __html: `!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-dark")||'"system"';('"dark"'===t||e&&'"light"'!==t)&&document.documentElement.classList.toggle("dark",!0)}();`,
           }}
         />
-        {env.NODE_ENV === 'production' && (
-          <Script src={siteConfig.umamiUrl} data-website-id={siteConfig.umamiId} />
-        )}
         <AppProvider>{children}</AppProvider>
       </body>
     </html>

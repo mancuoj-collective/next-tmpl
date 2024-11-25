@@ -1,11 +1,9 @@
 'use client'
 
-import * as React from 'react'
-
-import { useTheme } from '@/hooks/use-theme'
+import { useDark } from '@/hooks/use-dark'
 
 export function DarkModeToggle() {
-  const { toggleDark } = useTheme()
+  const { toggleDark } = useDark()
 
   return (
     <button

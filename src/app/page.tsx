@@ -1,3 +1,5 @@
+'use client'
+
 import { LandingHeader } from '@/components/landing'
 import { Button } from '@/components/ui/button'
 
