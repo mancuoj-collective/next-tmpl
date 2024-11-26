@@ -1,8 +1,9 @@
 'use client'
 
 import { useDark } from '@/hooks/use-dark'
+import { cn } from '@/lib/utils'
 
-export function DarkModeToggle() {
+export function DarkModeToggle({ className }: { className?: string }) {
   const { toggleDark } = useDark()
 
   return (
@@ -11,7 +12,7 @@ export function DarkModeToggle() {
       title="toggle dark mode"
       type="button"
       onClick={toggleDark}
-      className="flex items-center justify-center"
+      className={cn('inline-flex items-center justify-center', className)}
     >
       <div
         role="img"

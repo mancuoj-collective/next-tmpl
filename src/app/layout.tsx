@@ -2,8 +2,10 @@ import '@/styles/globals.css'
 
 import type { Metadata } from 'next'
 import { Inter, Lora } from 'next/font/google'
+import Link from 'next/link'
 import Script from 'next/script'
 
+import { DarkModeToggle } from '@/components/theme'
 import { env } from '@/config/env'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
@@ -34,7 +36,22 @@ export default function RootLayout({
             __html: `!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-dark")||'"system"';('"dark"'===t||e&&'"light"'!==t)&&document.documentElement.classList.toggle("dark",!0)}();`,
           }}
         />
-        <AppProvider>{children}</AppProvider>
+        <AppProvider>
+          <div className="relative flex min-h-svh flex-col">
+            <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg">
+              <div className="flex h-20 items-center justify-between gap-2 px-6 md:px-16 lg:px-28">
+                <Link href="/" className="i-simple-icons-nextdotjs size-6" />
+                <div className="flex items-center gap-3">
+                  <DarkModeToggle />
+                  <a href="https://github.com/mancuoj-collective/next-tmpl" className="i-mingcute-github-line size-5" target="_blank" rel="noreferrer" />
+                </div>
+              </div>
+            </header>
+            <div className="flex flex-1 flex-col items-center justify-center">
+              {children}
+            </div>
+          </div>
+        </AppProvider>
       </body>
     </html>
   )
