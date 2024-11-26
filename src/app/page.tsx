@@ -1,19 +1,32 @@
-'use client'
+import { redirect } from 'next/navigation'
 
-import Link from 'next/link'
+import { Logout } from '@/components/auth/logout'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Card, CardContent } from '@/components/ui/card'
+import { getCurrentSession } from '@/db/cookie'
 
-import { Button } from '@/components/ui/button'
+export default async function Page() {
+  const { user } = await getCurrentSession()
 
-export default function Page() {
+  if (user === null) {
+    return redirect('/login')
+  }
+
   return (
-    <>
-      <h1 className="mb-10 font-lora text-3xl font-semibold">Next.js Starter Template</h1>
-      <Button asChild>
-        <Link href="/login">
-          <div className="i-mingcute-github-line size-4" />
-          Sign in with GitHub
-        </Link>
-      </Button>
-    </>
+    <Card className="w-full max-w-[350px] px-3 md:max-w-lg">
+      <CardContent className="relative flex items-center gap-4 py-5">
+        <Avatar className="size-14 md:size-16">
+          <AvatarImage src={`https://avatars.githubusercontent.com/u/${user.githubId}`} alt="GitHub avatar" />
+          <AvatarFallback>{user.username.slice(0, 2).toUpperCase()}</AvatarFallback>
+        </Avatar>
+        <div className="space-y-1 md:space-y-2">
+          <h2 className="truncate text-base font-semibold md:text-xl">{user.username}</h2>
+          <p className="truncate text-sm text-muted-foreground">{user.email}</p>
+        </div>
+        <div className="absolute right-3 top-5">
+          <Logout />
+        </div>
+      </CardContent>
+    </Card>
   )
 }

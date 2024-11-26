@@ -1,7 +1,25 @@
-export default function Page() {
+import Link from 'next/link'
+import { redirect } from 'next/navigation'
+
+import { Button } from '@/components/ui/button'
+import { getCurrentSession } from '@/db/cookie'
+
+export default async function Page() {
+  const { user } = await getCurrentSession()
+
+  if (user !== null) {
+    return redirect('/')
+  }
+
   return (
-    <div className="rounded-lg border p-10 shadow">
-      User Profile
-    </div>
+    <>
+      <h1 className="mb-10 font-lora text-3xl font-semibold">Next.js Starter Template</h1>
+      <Button asChild>
+        <Link href="/login/github">
+          <div className="i-mingcute-github-line size-4" />
+          Sign in with GitHub
+        </Link>
+      </Button>
+    </>
   )
 }
