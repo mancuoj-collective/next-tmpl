@@ -4,10 +4,16 @@ import { cookies } from 'next/headers'
 
 import { setSessionTokenCookie } from '@/db/cookie'
 import { github } from '@/db/oauth'
+import { globalGETRateLimit } from '@/db/rate-limit'
 import { createSession, generateSessionToken } from '@/db/session'
 import { createUser, getUserByGithubId } from '@/db/user'
 
 export async function GET(request: Request): Promise<Response> {
+  const ok = await globalGETRateLimit()
+  if (!ok) {
+    return new Response('Too many requests', { status: 429 })
+  }
+
   const url = new URL(request.url)
   const code = url.searchParams.get('code')
   const state = url.searchParams.get('state')

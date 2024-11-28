@@ -3,10 +3,15 @@ import { redirect } from 'next/navigation'
 
 import { Button } from '@/components/ui/button'
 import { getCurrentSession } from '@/db/cookie'
+import { globalGETRateLimit } from '@/db/rate-limit'
 
 export default async function Page() {
-  const { user } = await getCurrentSession()
+  const ok = await globalGETRateLimit()
+  if (!ok) {
+    return 'Too many requests'
+  }
 
+  const { user } = await getCurrentSession()
   if (user !== null) {
     return redirect('/')
   }

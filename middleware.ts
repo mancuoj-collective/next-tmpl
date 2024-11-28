@@ -1,12 +1,9 @@
-/* eslint-disable no-console */
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
 import { env } from '@/config/env'
 
 export async function middleware(request: NextRequest): Promise<NextResponse> {
-  console.log('X-Forwarded-Host', request.headers.get('X-Forwarded-Host'))
-  console.log('X-Forwarded-For', request.headers.get('X-Forwarded-For'))
   if (request.method === 'GET') {
     const response = NextResponse.next()
     const token = request.cookies.get('session')?.value ?? null
@@ -24,7 +21,7 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
 
   // CSRF protection
   const originHeader = request.headers.get('Origin')
-  const hostHeader = request.headers.get('Host')
+  const hostHeader = request.headers.get('X-Forwarded-Host')
 
   if (originHeader === null || hostHeader === null) {
     return new NextResponse(null, { status: 403 })
@@ -43,5 +40,5 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
 }
 
 export const config = {
-  matcher: '/login/:path*',
+  matcher: '/:path*',
 }

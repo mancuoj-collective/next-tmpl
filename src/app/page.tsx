@@ -4,10 +4,15 @@ import { Logout } from '@/components/auth/logout'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Card, CardContent } from '@/components/ui/card'
 import { getCurrentSession } from '@/db/cookie'
+import { globalGETRateLimit } from '@/db/rate-limit'
 
 export default async function Page() {
-  const { user } = await getCurrentSession()
+  const ok = await globalGETRateLimit()
+  if (!ok) {
+    return 'Too many requests'
+  }
 
+  const { user } = await getCurrentSession()
   if (user === null) {
     return redirect('/login')
   }
