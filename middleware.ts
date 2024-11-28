@@ -1,9 +1,12 @@
+/* eslint-disable no-console */
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
 import { env } from '@/config/env'
 
 export async function middleware(request: NextRequest): Promise<NextResponse> {
+  console.log('X-Forwarded-Host', request.headers.get('X-Forwarded-Host'))
+  console.log('X-Forwarded-For', request.headers.get('X-Forwarded-For'))
   if (request.method === 'GET') {
     const response = NextResponse.next()
     const token = request.cookies.get('session')?.value ?? null
@@ -37,4 +40,8 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
     return new NextResponse(null, { status: 403 })
   }
   return NextResponse.next()
+}
+
+export const config = {
+  matcher: '/login/:path*',
 }

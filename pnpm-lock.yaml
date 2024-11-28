@@ -39,8 +39,8 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0
       class-variance-authority:
-        specifier: ^0.7.0
-        version: 0.7.0
+        specifier: ^0.7.1
+        version: 0.7.1
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -52,16 +52,16 @@ importers:
         version: 2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106)
       jotai-dark:
         specifier: ^0.4.0
-        version: 0.4.0(jotai-effect@1.0.3(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106)))(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)
+        version: 0.4.0(jotai-effect@1.0.4(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106)))(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)
       jotai-effect:
-        specifier: ^1.0.3
-        version: 1.0.3(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106))
+        specifier: ^1.0.4
+        version: 1.0.4(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106))
       ky:
         specifier: ^1.7.2
         version: 1.7.2
       lucide-react:
-        specifier: ^0.460.0
-        version: 0.460.0(react@19.0.0-rc-66855b96-20241106)
+        specifier: ^0.462.0
+        version: 0.462.0(react@19.0.0-rc-66855b96-20241106)
       next:
         specifier: 15.0.3
         version: 15.0.3(@babel/core@7.26.0)(react-dom@19.0.0-rc-66855b96-20241106(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106)
@@ -97,8 +97,8 @@ importers:
         specifier: ^1.2.13
         version: 1.2.13
       '@types/node':
-        specifier: ^22.9.3
-        version: 22.9.3
+        specifier: ^22.10.1
+        version: 22.10.1
       '@types/react':
         specifier: ^18.3.12
         version: 18.3.12
@@ -1404,8 +1404,8 @@ packages:
   '@types/minimatch@5.1.2':
     resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
 
-  '@types/node@22.9.3':
-    resolution: {integrity: sha512-F3u1fs/fce3FFk+DAxbxc78DF8x0cY09RRL8GnXLmkJ1jvx3TtPdWoTT5/NiYfI5ASqXBmfqJi9dZ3gxMx4lzw==}
+  '@types/node@22.10.1':
+    resolution: {integrity: sha512-qKgsUwfHZV2WCWLAnVP1JqnpE6Im6h3Y0+fYgMTasNQ7V++CBX5OT1as0g0f+OyubbFqhf6XVNIsmN4IIhEgGQ==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -1625,8 +1625,8 @@ packages:
     resolution: {integrity: sha512-HutrvTNsF48wnxkzERIXOe5/mlcfFcbfCmwcg6CJnizbSue78AbDt+1cgl26zwn61WFxhcPykPfZrbqjGmBb4A==}
     engines: {node: '>=8'}
 
-  class-variance-authority@0.7.0:
-    resolution: {integrity: sha512-jFI8IQw4hczaL4ALINxqLEXQbWcNjoSkloa4IaufXCJr6QawJyw7tuRysRsrE8w2p/4gGaxKIt/hX3qz/IbD1A==}
+  class-variance-authority@0.7.1:
+    resolution: {integrity: sha512-Ka+9Trutv7G8M6WT6SeiRWz792K5qEqIGEGzXKhAE6xOWAY6pPH8U+9IY3oCMv6kqTmLsv7Xh/2w2RigkePMsg==}
 
   clean-regexp@1.0.0:
     resolution: {integrity: sha512-GfisEZEJvzKrmGWkvfhgzcz/BllN1USeqD2V6tg14OAOgaCD2Z/PUEuxnAZ/nPvmaHRG7a8y77p1T/IRQ4D1Hw==}
@@ -1646,10 +1646,6 @@ packages:
   cliui@8.0.1:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
     engines: {node: '>=12'}
-
-  clsx@2.0.0:
-    resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
-    engines: {node: '>=6'}
 
   clsx@2.1.1:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
@@ -2428,8 +2424,8 @@ packages:
       react:
         optional: true
 
-  jotai-effect@1.0.3:
-    resolution: {integrity: sha512-Xye6oVMQkhOmkF9G5gdtwlqG2w9GuMcfYdRS0aV/HeoYCj1LfLJ4O8jQRVT/Zb5hPGOLGNll/x6k5wxifn1jYg==}
+  jotai-effect@1.0.4:
+    resolution: {integrity: sha512-4ug5RsLwZpxqv+nb8u4VwnvjpGUbmYASKrywT/YYcLOvLJZA+nBZbLU1WxqhyZfmnw42jkIAtBWj+5xFLITyVg==}
     peerDependencies:
       jotai: '>=2.5.0'
 
@@ -2560,8 +2556,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-react@0.460.0:
-    resolution: {integrity: sha512-BVtq/DykVeIvRTJvRAgCsOwaGL8Un3Bxh8MbDxMhEWlZay3T4IpEKDEpwt5KZ0KJMHzgm6jrltxlT5eXOWXDHg==}
+  lucide-react@0.462.0:
+    resolution: {integrity: sha512-NTL7EbAao9IFtuSivSZgrAh4fZd09Lr+6MTkqIxuHaH2nnYiYIzXPo06cOxHg9wKLdj6LL8TByG4qpePqwgx/g==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
@@ -3239,8 +3235,8 @@ packages:
   unconfig@0.6.0:
     resolution: {integrity: sha512-4C67J0nIF2QwSXty2kW3zZx1pMZ3iXabylvJWWgHybWVUcMf9pxwsngoQt0gC+AVstRywFqrRBp3qOXJayhpOw==}
 
-  undici-types@6.19.8:
-    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
   unicorn-magic@0.1.0:
     resolution: {integrity: sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ==}
@@ -4483,15 +4479,15 @@ snapshots:
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 22.9.3
+      '@types/node': 22.10.1
 
   '@types/json-schema@7.0.15': {}
 
   '@types/minimatch@5.1.2': {}
 
-  '@types/node@22.9.3':
+  '@types/node@22.10.1':
     dependencies:
-      undici-types: 6.19.8
+      undici-types: 6.20.0
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -4508,7 +4504,7 @@ snapshots:
 
   '@types/ws@8.5.13':
     dependencies:
-      '@types/node': 22.9.3
+      '@types/node': 22.10.1
 
   '@typescript-eslint/eslint-plugin@8.15.0(@typescript-eslint/parser@8.15.0(eslint@9.15.0(jiti@2.4.0))(typescript@5.7.2))(eslint@9.15.0(jiti@2.4.0))(typescript@5.7.2)':
     dependencies:
@@ -4737,9 +4733,9 @@ snapshots:
 
   ci-info@4.1.0: {}
 
-  class-variance-authority@0.7.0:
+  class-variance-authority@0.7.1:
     dependencies:
-      clsx: 2.0.0
+      clsx: 2.1.1
 
   clean-regexp@1.0.0:
     dependencies:
@@ -4761,8 +4757,6 @@ snapshots:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
-
-  clsx@2.0.0: {}
 
   clsx@2.1.1: {}
 
@@ -5623,13 +5617,13 @@ snapshots:
 
   jiti@2.4.0: {}
 
-  jotai-dark@0.4.0(jotai-effect@1.0.3(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106)))(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106):
+  jotai-dark@0.4.0(jotai-effect@1.0.4(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106)))(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106))(react@19.0.0-rc-66855b96-20241106):
     optionalDependencies:
       jotai: 2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106)
-      jotai-effect: 1.0.3(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106))
+      jotai-effect: 1.0.4(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106))
       react: 19.0.0-rc-66855b96-20241106
 
-  jotai-effect@1.0.3(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106)):
+  jotai-effect@1.0.4(jotai@2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106)):
     dependencies:
       jotai: 2.10.3(@types/react@18.3.12)(react@19.0.0-rc-66855b96-20241106)
 
@@ -5760,7 +5754,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-react@0.460.0(react@19.0.0-rc-66855b96-20241106):
+  lucide-react@0.462.0(react@19.0.0-rc-66855b96-20241106):
     dependencies:
       react: 19.0.0-rc-66855b96-20241106
 
@@ -6451,7 +6445,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  undici-types@6.19.8: {}
+  undici-types@6.20.0: {}
 
   unicorn-magic@0.1.0: {}
 

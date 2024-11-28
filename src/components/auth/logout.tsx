@@ -11,7 +11,7 @@ export function Logout() {
 
   return (
     <form action={action}>
-      <button type="submit" title="Logout" className="i-mingcute-power-line size-5 text-destructive hover:text-destructive/90" />
+      <button type="submit" title="Logout" className="i-mingcute-exit-line size-5 hover:text-destructive/90" />
     </form>
   )
 }
