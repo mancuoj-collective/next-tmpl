@@ -6,7 +6,7 @@ import { useDark } from '@/hooks/use-dark'
 
 type ToasterProps = React.ComponentProps<typeof Sonner>
 
-const Toaster = ({ ...props }: ToasterProps) => {
+function Toaster({ ...props }: ToasterProps) {
   const { theme = 'system' } = useDark()
 
   return (
