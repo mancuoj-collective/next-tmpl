@@ -1,7 +1,7 @@
 import { DarkModeToggle } from '@/components/theme'
 import { Button } from '@/components/ui/button'
 
-export default async function Page() {
+export default function Page() {
   return (
     <div className="flex min-h-svh flex-col items-center justify-center gap-5">
       <div className="font-dm text-2xl font-semibold">Next - Tmpl</div>

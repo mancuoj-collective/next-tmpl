@@ -1,4 +1,4 @@
-import '@/globals.css'
+import '@/styles/globals.css'
 
 import type { Metadata } from 'next'
 import { DM_Sans, Inter, Lora } from 'next/font/google'
