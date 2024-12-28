@@ -14,6 +14,7 @@
     "@auth/drizzle-adapter": "latest",
     "@libsql/client": "latest",
     "@radix-ui/react-avatar": "latest",
+    "@radix-ui/react-dialog": "latest",
     "@radix-ui/react-dropdown-menu": "latest",
     "@radix-ui/react-slot": "latest",
     "@t3-oss/env-nextjs": "latest",
@@ -27,6 +28,7 @@
     "react": "latest",
     "react-dom": "latest",
     "sonner": "latest",
+    "usehooks-ts": "latest",
     "zod": "latest",
     "zustand": "latest"
   },
