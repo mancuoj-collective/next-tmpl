@@ -13,6 +13,8 @@
   "dependencies": {
     "@auth/drizzle-adapter": "latest",
     "@libsql/client": "latest",
+    "@radix-ui/react-avatar": "latest",
+    "@radix-ui/react-dropdown-menu": "latest",
     "@radix-ui/react-slot": "latest",
     "@t3-oss/env-nextjs": "latest",
     "drizzle-orm": "latest",

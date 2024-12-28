@@ -3,6 +3,7 @@ import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import { DM_Sans, Inter, Lora } from 'next/font/google'
 
+import { Header } from '@/components/header'
 import { cn } from '@/lib/utils'
 
 import { AppProvider } from './provider'
@@ -23,7 +24,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn('font-sans antialiased', inter.variable, lora.variable, dm.variable)}>
         <AppProvider>
-          {children}
+          <div className="relative flex min-h-svh flex-col">
+            <Header />
+            <main className="flex flex-1">{children}</main>
+          </div>
         </AppProvider>
       </body>
     </html>
