@@ -14,7 +14,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', ...fontFamily.sans],
+        inter: ['var(--font-inter)', ...fontFamily.sans],
         lora: ['var(--font-lora)', ...fontFamily.serif],
         dm: ['var(--font-dm)', ...fontFamily.sans],
       },

@@ -22,11 +22,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn('font-sans antialiased', inter.variable, lora.variable, dm.variable)}>
+      <body className={cn('font-dm antialiased', inter.variable, lora.variable, dm.variable)}>
         <AppProvider>
           <div className="relative flex min-h-svh flex-col">
             <Header />
-            <main className="flex flex-1">{children}</main>
+            <main className="wrapper grid-bg flex flex-1">{children}</main>
           </div>
         </AppProvider>
       </body>

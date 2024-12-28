@@ -16,20 +16,20 @@ import {
 export function UserDropdown({ session }: { session: Session | null }) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
-        <Avatar>
+      <DropdownMenuTrigger className="rounded-full">
+        <Avatar className="size-14">
           <AvatarImage src={session?.user?.image || undefined} alt={session?.user?.name || undefined} />
           <AvatarFallback>
             {session?.user?.name?.slice(0, 2).toUpperCase()}
           </AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="min-w-56 rounded-lg" side="top" sideOffset={10}>
+      <DropdownMenuContent className="min-w-56 rounded-lg" side="top" sideOffset={16}>
         <DropdownMenuLabel className="p-0 font-normal">
           <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-            <Avatar className="size-8 rounded-lg">
+            <Avatar className="size-8">
               <AvatarImage src={session?.user?.image || undefined} alt={session?.user?.name || undefined} />
-              <AvatarFallback className="rounded-lg">
+              <AvatarFallback>
                 {session?.user?.name?.slice(0, 2).toUpperCase()}
               </AvatarFallback>
             </Avatar>
