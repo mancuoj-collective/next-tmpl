@@ -3,14 +3,5 @@
     "title": "Next.js - Stater - Template",
     "github": "Continue with GitHub",
     "logout": "Log out"
-  },
-  "theme": {
-    "title": "Customize",
-    "description": "Pick a style for the template",
-    "color": "Color",
-    "radius": "Radius",
-    "mode": "Mode",
-    "light": "Light",
-    "dark": "Dark"
   }
 }

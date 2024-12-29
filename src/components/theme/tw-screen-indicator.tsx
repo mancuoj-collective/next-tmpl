@@ -1,3 +1,5 @@
+'use client'
+
 export function TwScreenIndicator() {
   if (process.env.NODE_ENV === 'production')
     return null
