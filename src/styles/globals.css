@@ -80,7 +80,7 @@
   }
 
   .grid-bg {
-    background-size: 14px 14px;
+    background-size: 16px 16px;
     background-image: linear-gradient(to right, hsl(var(--muted)) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(var(--muted)) 1px, transparent 1px);
   }

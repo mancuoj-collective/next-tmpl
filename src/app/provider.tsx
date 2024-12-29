@@ -10,9 +10,9 @@ import { Toaster } from '@/components/ui/sonner'
 
 export function AppProvider({ children }: React.PropsWithChildren) {
   return (
-    <SessionProvider>
-      <NuqsAdapter>
-        <Provider>
+    <Provider>
+      <SessionProvider>
+        <NuqsAdapter>
           {/* TODO: remove it if not needed */}
           {process.env.NODE_ENV === 'production' && (
             <Script
@@ -25,8 +25,8 @@ export function AppProvider({ children }: React.PropsWithChildren) {
           {children}
           <TwScreenIndicator />
           <Toaster richColors />
-        </Provider>
-      </NuqsAdapter>
-    </SessionProvider>
+        </NuqsAdapter>
+      </SessionProvider>
+    </Provider>
   )
 }

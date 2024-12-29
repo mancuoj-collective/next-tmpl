@@ -1,3 +1,5 @@
+'use client'
+
 import { baseColors } from './base-colors'
 
 export function ThemeScript() {

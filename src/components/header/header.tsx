@@ -1,5 +1,3 @@
-'use client'
-
 import { DarkModeToggle, ThemeDialog } from '@/components/theme'
 
 import { ProgressBar, ProgressBarLink } from '../ui/progress-bar'
