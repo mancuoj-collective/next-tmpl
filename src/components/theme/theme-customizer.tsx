@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { useEffect } from 'react'
 
 import { Button } from '@/components/ui/button'
@@ -16,6 +17,7 @@ function getActiveColor(theme: BaseColor['name'], isDark = false) {
 }
 
 export function ThemeCustomizer() {
+  const t = useTranslations('theme')
   const [config, setConfig] = useConfig()
   const { isDark, toggleDark } = useDark()
   const isMobile = useIsMobile()
@@ -34,7 +36,7 @@ export function ThemeCustomizer() {
   return (
     <div className="grid gap-5">
       <div className="space-y-2">
-        <h2 className="text-sm font-medium">Color</h2>
+        <h2 className="text-sm font-medium">{t('color')}</h2>
         <div className="grid grid-cols-3 gap-1.5 md:gap-2.5">
           {builtinColors.map((color) => {
             const isActive = config.color === color
@@ -59,7 +61,7 @@ export function ThemeCustomizer() {
         </div>
       </div>
       <div className="space-y-2">
-        <h2 className="text-sm font-medium">Radius</h2>
+        <h2 className="text-sm font-medium">{t('radius')}</h2>
         <div className="grid grid-cols-5 gap-1 md:gap-2.5">
           {builtinRadiuses.map((radius) => {
             const isActive = config.radius === radius
@@ -78,7 +80,7 @@ export function ThemeCustomizer() {
         </div>
       </div>
       <div className="space-y-2">
-        <h2 className="text-sm font-medium">Mode</h2>
+        <h2 className="text-sm font-medium">{t('mode')}</h2>
         <div className="grid grid-cols-3 gap-1 md:gap-2.5">
           <Button
             variant="outline"
@@ -87,7 +89,7 @@ export function ThemeCustomizer() {
             className={cn('justify-start', !isDark && 'border-2 border-primary')}
           >
             <span className="i-carbon-sun" />
-            Light
+            {t('light')}
           </Button>
           <Button
             variant="outline"
@@ -96,7 +98,7 @@ export function ThemeCustomizer() {
             className={cn('justify-start', isDark && 'border-2 border-primary')}
           >
             <span className="i-carbon-moon" />
-            Dark
+            {t('dark')}
           </Button>
         </div>
       </div>

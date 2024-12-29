@@ -1,12 +1,8 @@
 'use client'
 
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog'
+import { useTranslations } from 'next-intl'
+
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { useConfig } from '@/hooks/use-config'
 import { useDark } from '@/hooks/use-dark'
 import { cn } from '@/lib/utils'
@@ -14,6 +10,7 @@ import { cn } from '@/lib/utils'
 import { ThemeCustomizer } from './theme-customizer'
 
 export function ThemeDialog() {
+  const t = useTranslations('theme')
   const [config] = useConfig()
   const { isDark } = useDark()
 
@@ -27,10 +24,8 @@ export function ThemeDialog() {
         style={{ '--radius': `${config.radius}rem` } as React.CSSProperties}
       >
         <DialogTitle>
-          Customize
-          <DialogDescription>
-            Pick a style for the template.
-          </DialogDescription>
+          {t('title')}
+          <DialogDescription>{t('description')}</DialogDescription>
         </DialogTitle>
         <ThemeCustomizer />
       </DialogContent>

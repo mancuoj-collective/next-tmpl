@@ -26,6 +26,7 @@
     "lucide-react": "latest",
     "next": "latest",
     "next-auth": "beta",
+    "next-intl": "latest",
     "nuqs": "latest",
     "react": "latest",
     "react-dom": "latest",

@@ -2,6 +2,7 @@
 
 import type { Session } from 'next-auth'
 import { signOut } from 'next-auth/react'
+import { useTranslations } from 'next-intl'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import {
@@ -14,6 +15,8 @@ import {
 } from '@/components/ui/dropdown-menu'
 
 export function UserDropdown({ session }: { session: Session | null }) {
+  const t = useTranslations('login')
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="rounded-full">
@@ -42,7 +45,7 @@ export function UserDropdown({ session }: { session: Session | null }) {
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => signOut()}>
           <span className="i-carbon-logout" />
-          Log out
+          {t('logout')}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

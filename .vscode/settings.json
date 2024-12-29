@@ -27,5 +27,9 @@
     { "rule": "prefer-const", "severity": "off" },
     { "rule": "unused-imports/no-unused-imports", "severity": "off" },
     { "rule": "tailwindcss/classnames-order", "severity": "off" }
-  ]
+  ],
+
+  // i18n ally
+  "i18n-ally.localesPaths": ["./messages"],
+  "i18n-ally.keystyle": "nested"
 }
