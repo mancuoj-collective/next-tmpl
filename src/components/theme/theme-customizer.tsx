@@ -12,7 +12,7 @@ import { cn } from '@/lib/utils'
 import type { BaseColor } from './base-colors'
 import { baseColors, builtinColors, builtinRadiuses } from './base-colors'
 
-function getActiveColor(color: BaseColor['name'], isDark = false) {
+function getActiveColor(color: BaseColor['name'], isDark: boolean) {
   return `hsl(${baseColors.find(t => t.name === color)?.activeColor[isDark ? 'dark' : 'light']})`
 }
 
