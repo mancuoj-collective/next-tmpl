@@ -7,7 +7,7 @@ import { signIn } from '@/lib/auth'
 // eslint-disable-next-line unused-imports/no-unused-vars
 export async function loginGithub(prevState: string | undefined) {
   try {
-    await signIn('github', { callbackUrl: '/' })
+    await signIn('github', { redirectTo: '/' })
   } catch (error) {
     if (error instanceof AuthError) {
       return error.message
