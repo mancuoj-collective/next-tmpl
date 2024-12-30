@@ -3,5 +3,14 @@
     "title": "Next.js - 起手 - 模板",
     "github": "登录 GitHub 以继续",
     "logout": "登出"
+  },
+  "theme": {
+    "title": "自定义",
+    "description": "给模板选择一个样式",
+    "color": "颜色",
+    "radius": "圆角",
+    "mode": "模式",
+    "light": "明亮",
+    "dark": "暗黑"
   }
 }

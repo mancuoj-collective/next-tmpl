@@ -57,11 +57,6 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={cn('font-dm antialiased', inter.variable, lora.variable, dm.variable)}>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-dark")||'"system"';('"dark"'===t||e&&'"light"'!==t)&&document.documentElement.classList.toggle("dark",!0)}();`,
-          }}
-        />
         <NextIntlClientProvider messages={messages}>
           <AppProvider>
             <div className="relative flex min-h-svh flex-col">
