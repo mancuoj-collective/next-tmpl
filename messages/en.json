@@ -1,10 +1,12 @@
 {
-  "login": {
+  "LoginPage": {
     "title": "Next.js - Stater - Template",
-    "github": "Continue with GitHub",
+    "github": "Continue with GitHub"
+  },
+  "HomePage": {
     "logout": "Log out"
   },
-  "theme": {
+  "ThemeDialog": {
     "title": "Customize",
     "description": "Pick a style for the template",
     "color": "Color",

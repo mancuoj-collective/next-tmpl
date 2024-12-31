@@ -1,5 +1,3 @@
-'use client'
-
 import { DarkModeToggle, ThemeDialog } from '@/components/theme'
 
 import { ProgressBar, ProgressBarLink } from '../ui/progress-bar'
@@ -7,7 +5,7 @@ import { LangSwitcher } from './lang-switcher'
 
 export function Header() {
   return (
-    <ProgressBar className="fixed top-0 h-0.5 bg-primary">
+    <ProgressBar className="fixed top-0 z-50 h-0.5 bg-primary">
       <header className="border-b">
         <div className="wrapper flex h-16 items-center justify-between px-6">
           <ProgressBarLink href="/" className="i-simple-icons-nextdotjs text-xl" />

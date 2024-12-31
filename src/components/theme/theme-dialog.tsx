@@ -18,7 +18,7 @@ function getActiveColor(color: BaseColor['name'], isDark: boolean) {
 }
 
 export function ThemeDialog() {
-  const t = useTranslations('theme')
+  const t = useTranslations('ThemeDialog')
   const [config, setConfig] = useConfig()
   const { isDark, toggleDark } = useDark()
   const isMobile = useIsMobile()

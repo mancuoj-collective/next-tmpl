@@ -15,7 +15,7 @@ import {
 import { Skeleton } from '@/components/ui/skeleton'
 
 export function UserDropdown() {
-  const t = useTranslations('login')
+  const t = useTranslations('HomePage')
   const { data: session, status } = useSession()
 
   if (status === 'loading') {

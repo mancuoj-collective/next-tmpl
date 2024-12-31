@@ -1,11 +1,9 @@
-'use client'
-
 import { useTranslations } from 'next-intl'
 
 import { LoginForm } from '@/components/login-form'
 
 export default function LoginPage() {
-  const t = useTranslations('login')
+  const t = useTranslations('LoginPage')
 
   return (
     <div className="flex w-full flex-col items-center justify-center gap-8">

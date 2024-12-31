@@ -1,5 +1,3 @@
-'use client'
-
 import { baseColors } from './base'
 
 export function ThemeStyle() {
