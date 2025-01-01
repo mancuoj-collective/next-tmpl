@@ -78,7 +78,6 @@ function GlobalProgressForBrowserNavigation() {
   useEffect(() => {
     if (didPopState && newPathname === pathname) {
       progress.done()
-      // eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect
       setDidPopState(false)
     }
   }, [didPopState, newPathname, pathname, progress])

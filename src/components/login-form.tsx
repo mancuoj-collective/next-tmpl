@@ -10,7 +10,6 @@ import { Button } from './ui/button'
 
 export function LoginForm() {
   const t = useTranslations('LoginPage')
-  // eslint-disable-next-line unicorn/no-useless-undefined
   const [error, formAction, isPending] = useActionState(loginGithub, undefined)
 
   useEffect(() => {
