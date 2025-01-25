@@ -5,7 +5,7 @@ export function ThemeStyle() {
     <>
       <script
         dangerouslySetInnerHTML={{
-          __html: `!function(){var c=JSON.parse(localStorage.getItem("use-config")||'{"color": "zinc", "radius": "0.5")}');document.documentElement.classList.add("theme-" + c.color);document.documentElement.style.setProperty("--radius", c.radius + "rem");}();`,
+          __html: `!function(){var c=JSON.parse(localStorage.getItem("use-config")||'{"color":"zinc","radius":"0.5")}');document.documentElement.classList.add("theme-"+c.color);document.documentElement.style.setProperty("--radius",c.radius+"rem")}();`,
         }}
       />
       <style dangerouslySetInnerHTML={{ __html: generateCSS() }} />

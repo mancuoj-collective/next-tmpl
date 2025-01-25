@@ -51,7 +51,7 @@
     "simple-git-hooks": "latest",
     "tailwind-merge": "latest",
     "tailwind-scrollbar": "latest",
-    "tailwindcss": "latest",
+    "tailwindcss": "^3",
     "tailwindcss-animate": "latest",
     "typescript": "latest"
   },

@@ -18,4 +18,10 @@ export default defineConfig(
       '@eslint-react/hooks-extra/no-direct-set-state-in-use-effect': 'off',
     },
   },
+  {
+    files: ['package.json'],
+    rules: {
+      'package-json/valid-package-definition': 'off',
+    },
+  },
 )
