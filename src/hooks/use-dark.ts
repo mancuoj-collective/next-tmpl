@@ -1,16 +1,18 @@
-import { useAtom } from 'jotai'
-import { atomDark } from 'jotai-dark'
-
-const isDarkAtom = atomDark({
-  disableTransition: true,
-  disableTransitionExclude: ['.sun', '.moon'],
-})
+import { useTheme } from 'next-themes'
+import { useCallback } from 'react'
 
 export function useDark() {
-  const [isDark, setIsDark] = useAtom(isDarkAtom)
-  return {
-    isDark,
-    toggleDark: setIsDark as () => void,
-    theme: (isDark ? 'dark' : 'light') as 'dark' | 'light',
-  }
+  const { theme, setTheme, resolvedTheme } = useTheme()
+
+  const isDark = resolvedTheme === 'dark'
+
+  const toggleDark = useCallback(() => {
+    if (theme === 'system') {
+      setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+    } else {
+      setTheme(theme === 'dark' ? 'light' : 'dark')
+    }
+  }, [theme, resolvedTheme, setTheme])
+
+  return { resolvedTheme, isDark, toggleDark }
 }

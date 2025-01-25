@@ -5,7 +5,7 @@ export function ThemeStyle() {
     <>
       <script
         dangerouslySetInnerHTML={{
-          __html: `!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-dark")||'"system"';('"dark"'===t||e&&'"light"'!==t)&&document.documentElement.classList.toggle("dark",!0);var c=JSON.parse(localStorage.getItem("use-config")||'{"color": "zinc", "radius": "0.5")}');document.documentElement.classList.add("theme-" + c.color);document.documentElement.style.setProperty("--radius", c.radius + "rem");}();`,
+          __html: `!function(){var c=JSON.parse(localStorage.getItem("use-config")||'{"color": "zinc", "radius": "0.5")}');document.documentElement.classList.add("theme-" + c.color);document.documentElement.style.setProperty("--radius", c.radius + "rem");}();`,
         }}
       />
       <style dangerouslySetInnerHTML={{ __html: generateCSS() }} />

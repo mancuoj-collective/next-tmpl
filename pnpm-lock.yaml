@@ -36,14 +36,8 @@ importers:
         specifier: latest
         version: 11.15.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       jotai:
-        specifier: '2.10'
-        version: 2.10.4(@types/react@19.0.2)(react@19.0.0)
-      jotai-dark:
         specifier: latest
-        version: 0.4.0(jotai-effect@1.0.7(jotai@2.10.4(@types/react@19.0.2)(react@19.0.0)))(jotai@2.10.4(@types/react@19.0.2)(react@19.0.0))(react@19.0.0)
-      jotai-effect:
-        specifier: latest
-        version: 1.0.7(jotai@2.10.4(@types/react@19.0.2)(react@19.0.0))
+        version: 2.11.1(@types/react@19.0.2)(react@19.0.0)
       lucide-react:
         specifier: latest
         version: 0.469.0(react@19.0.0)
@@ -56,6 +50,9 @@ importers:
       next-intl:
         specifier: latest
         version: 3.26.3(next@15.1.3(@babel/core@7.26.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
+      next-themes:
+        specifier: latest
+        version: 0.4.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       nuqs:
         specifier: latest
         version: 2.2.3(next@15.1.3(@babel/core@7.26.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
@@ -80,13 +77,13 @@ importers:
     devDependencies:
       '@egoist/tailwindcss-icons':
         specifier: latest
-        version: 1.8.2(tailwindcss@3.4.17)
+        version: 1.9.0(tailwindcss@3.4.17)
       '@iconify-json/carbon':
         specifier: latest
         version: 1.2.5
       '@iconify-json/simple-icons':
         specifier: latest
-        version: 1.2.17
+        version: 1.2.21
       '@types/node':
         specifier: latest
         version: 22.10.2
@@ -290,8 +287,8 @@ packages:
   '@drizzle-team/brocli@0.10.2':
     resolution: {integrity: sha512-z33Il7l5dKjUgGULTqBsQBQwckHh5AbIuxhdsIxDDiZAzBOrZO6q9ogcWC65kU382AfynTfgNumVcNIjuIua6w==}
 
-  '@egoist/tailwindcss-icons@1.8.2':
-    resolution: {integrity: sha512-A0+/387Qg+rZgGRNlV9chwyikaPq9HALJYMwVspbqdbeA+TNEwUajM38pyaUqASArhubZUnFOgRALsdWYXn+rg==}
+  '@egoist/tailwindcss-icons@1.9.0':
+    resolution: {integrity: sha512-xWA9cUy6hzlK7Y6TaoRIcwmilSXiTJ8rbXcEdf9uht7yzDgw/yIgF4rThIQMrpD2Y2v4od51+r2y6Z7GStanDQ==}
     peerDependencies:
       tailwindcss: '*'
 
@@ -1008,8 +1005,8 @@ packages:
   '@iconify-json/carbon@1.2.5':
     resolution: {integrity: sha512-aI3TEzOrUDGhs74zIT3ym/ZQBUEziyu8JifntX2Hb4siVzsP5sQ/QEfVdmcCUj37kQUYT3TYBSeAw2vTfCJx9w==}
 
-  '@iconify-json/simple-icons@1.2.17':
-    resolution: {integrity: sha512-1vXbM6a6HV2rwXxu8ptD2OYhqrqX0ZZRepOg7nIjkvKlKq90Iici4X++A8h36bEVlV2wGjqx8uVYB0pwnPZVSw==}
+  '@iconify-json/simple-icons@1.2.21':
+    resolution: {integrity: sha512-aqbIuVshMZ2fNEhm25//9DoKudboXF3CpoEQJJlHl9gVSVNOTr4cgaCIZvgSEYmys2HHEfmhcpoZIhoEFZS8SQ==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -2608,27 +2605,8 @@ packages:
   jose@5.9.6:
     resolution: {integrity: sha512-AMlnetc9+CV9asI19zHmrgS/WYsWUwCn2R7RzlbJWD7F9eWYUTGyBmU9o6PxngtLGOiDGPRu+Uc4fhKzbpteZQ==}
 
-  jotai-dark@0.4.0:
-    resolution: {integrity: sha512-1RUmCRqzZFcFrVJwuG4BZ3kDPNjElFXA1FH8X77rPqhFDkSy79rpTrzfMBAx2pZauQvXBRQWN3fJ1p+CF2JO4g==}
-    peerDependencies:
-      jotai: '>=2.5.0'
-      jotai-effect: '*'
-      react: '>=18.2.0'
-    peerDependenciesMeta:
-      jotai:
-        optional: true
-      jotai-effect:
-        optional: true
-      react:
-        optional: true
-
-  jotai-effect@1.0.7:
-    resolution: {integrity: sha512-FBuECs1g8ajTXoAvBI2r9BwGCoaoRwKRa99QiybhjaupbOjoqtxlU8gIpeBmB4DPcybxi1oI7od9Wsrlgva7Qg==}
-    peerDependencies:
-      jotai: '>=2.5.0'
-
-  jotai@2.10.4:
-    resolution: {integrity: sha512-/T4ofyMSkAybEs2OvR8S4HACa+/ASUEPLz86SUjFXJqU9RdJKLvZDJrag398suvHC5CR0+Cs4P5m/gtVcryzlw==}
+  jotai@2.11.1:
+    resolution: {integrity: sha512-41Su098mpHIX29hF/XOpDb0SqF6EES7+HXfrhuBqVSzRkxX48hD5i8nGsEewWZNAsBWJCTTmuz8M946Ih2PfcQ==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
@@ -2845,6 +2823,12 @@ packages:
     peerDependencies:
       next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0 || ^19.0.0
+
+  next-themes@0.4.4:
+    resolution: {integrity: sha512-LDQ2qIOJF0VnuVrrMSMLrWGjRMkq+0mpgl6e0juCLqdJ+oo8Q84JRWT6Wh11VDQKkMMe+dVzDKLWs5n87T+PkQ==}
+    peerDependencies:
+      react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
 
   next@15.1.3:
     resolution: {integrity: sha512-5igmb8N8AEhWDYzogcJvtcRDU6n4cMGtBklxKD4biYv4LXN8+awc/bbQ2IM2NQHdVPgJ6XumYXfo3hBtErg1DA==}
@@ -3841,7 +3825,7 @@ snapshots:
 
   '@drizzle-team/brocli@0.10.2': {}
 
-  '@egoist/tailwindcss-icons@1.8.2(tailwindcss@3.4.17)':
+  '@egoist/tailwindcss-icons@1.9.0(tailwindcss@3.4.17)':
     dependencies:
       '@iconify/utils': 2.2.1
       tailwindcss: 3.4.17
@@ -4366,7 +4350,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/simple-icons@1.2.17':
+  '@iconify-json/simple-icons@1.2.21':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -6036,17 +6020,7 @@ snapshots:
 
   jose@5.9.6: {}
 
-  jotai-dark@0.4.0(jotai-effect@1.0.7(jotai@2.10.4(@types/react@19.0.2)(react@19.0.0)))(jotai@2.10.4(@types/react@19.0.2)(react@19.0.0))(react@19.0.0):
-    optionalDependencies:
-      jotai: 2.10.4(@types/react@19.0.2)(react@19.0.0)
-      jotai-effect: 1.0.7(jotai@2.10.4(@types/react@19.0.2)(react@19.0.0))
-      react: 19.0.0
-
-  jotai-effect@1.0.7(jotai@2.10.4(@types/react@19.0.2)(react@19.0.0)):
-    dependencies:
-      jotai: 2.10.4(@types/react@19.0.2)(react@19.0.0)
-
-  jotai@2.10.4(@types/react@19.0.2)(react@19.0.0):
+  jotai@2.11.1(@types/react@19.0.2)(react@19.0.0):
     optionalDependencies:
       '@types/react': 19.0.2
       react: 19.0.0
@@ -6246,6 +6220,11 @@ snapshots:
       next: 15.1.3(@babel/core@7.26.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       use-intl: 3.26.3(react@19.0.0)
+
+  next-themes@0.4.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   next@15.1.3(@babel/core@7.26.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
