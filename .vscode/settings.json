@@ -1,35 +1,51 @@
 {
-  // You shouldn't use formatter with this ESLint config
-  "[javascript][javascriptreact][typescript][typescriptreact][json][jsonc]": {
-    "editor.formatOnSave": false,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit"
-    }
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
 
-  // If you do not want to auto fix some rules on save
-  // You can put this in your user settings or workspace settings
-  "eslint.codeActionsOnSave.rules": [
-    "!prefer-const",
-    "!unused-imports/no-unused-imports",
-    "!@stylistic/jsx-self-closing-comp",
-    "!tailwindcss/classnames-order",
-    "*"
-  ],
-
-  // If you want to silent stylistic rules
-  // You can put this in your user settings or workspace settings
+  // Silent the stylistic rules in you IDE, but still auto fix them
   "eslint.rules.customizations": [
-    { "rule": "@stylistic/*", "severity": "off", "fixable": true },
-    { "rule": "antfu/consistent-list-newline", "severity": "off" },
-    { "rule": "hyoban/jsx-attribute-spacing", "severity": "off" },
-    { "rule": "simple-import-sort/*", "severity": "off" },
-    { "rule": "prefer-const", "severity": "off" },
-    { "rule": "unused-imports/no-unused-imports", "severity": "off" },
-    { "rule": "tailwindcss/classnames-order", "severity": "off" }
+    { "rule": "style/*", "severity": "off", "fixable": true },
+    { "rule": "format/*", "severity": "off", "fixable": true },
+    { "rule": "*-indent", "severity": "off", "fixable": true },
+    { "rule": "*-spacing", "severity": "off", "fixable": true },
+    { "rule": "*-spaces", "severity": "off", "fixable": true },
+    { "rule": "*-order", "severity": "off", "fixable": true },
+    { "rule": "*-dangle", "severity": "off", "fixable": true },
+    { "rule": "*-newline", "severity": "off", "fixable": true },
+    { "rule": "*quotes", "severity": "off", "fixable": true },
+    { "rule": "*semi", "severity": "off", "fixable": true }
   ],
 
-  // i18n ally
-  "i18n-ally.localesPaths": ["./messages"],
-  "i18n-ally.keystyle": "nested"
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "json5",
+    "jsonc",
+    "yaml",
+    "toml",
+    "xml",
+    "gql",
+    "graphql",
+    "astro",
+    "svelte",
+    "css",
+    "less",
+    "scss",
+    "pcss",
+    "postcss"
+  ]
 }

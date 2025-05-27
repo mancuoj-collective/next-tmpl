@@ -1,27 +1,9 @@
-// @ts-check
-import { defineConfig } from 'eslint-config-hyoban'
+import antfu from '@antfu/eslint-config'
 
-export default defineConfig(
-  {
-    fileCase: 'kebabCase',
-    formatting: {
-      braceStyle: '1tbs',
-    },
+export default antfu({
+  formatters: true,
+  react: true,
+  rules: {
+    'react-refresh/only-export-components': 'off',
   },
-  {
-    rules: {
-      'tailwindcss/no-custom-classname': 'off',
-      'react-refresh/only-export-components': 'off',
-      'unused-imports/no-unused-vars': 'off',
-      'unicorn/no-useless-undefined': 'off',
-      '@eslint-react/no-forward-ref': 'off',
-      '@eslint-react/hooks-extra/no-direct-set-state-in-use-effect': 'off',
-    },
-  },
-  {
-    files: ['package.json'],
-    rules: {
-      'package-json/valid-package-definition': 'off',
-    },
-  },
-)
+})
