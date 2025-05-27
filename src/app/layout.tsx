@@ -1,26 +1,9 @@
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
-import { IBM_Plex_Mono, Libre_Baskerville, Lora } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
+import { fontMono, fontSans, fontSerif } from '@/config/font'
 import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
-
-const fontSans = Libre_Baskerville({
-  variable: '--font-sans',
-  subsets: ['latin'],
-  weight: ['400', '700'],
-})
-
-const fontMono = IBM_Plex_Mono({
-  variable: '--font-mono',
-  subsets: ['latin'],
-  weight: ['400', '700'],
-})
-
-const fontSerif = Lora({
-  variable: '--font-serif',
-  subsets: ['latin'],
-})
 
 export const metadata: Metadata = {
   title: 'Next',
