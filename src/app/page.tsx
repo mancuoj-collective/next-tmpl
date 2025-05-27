@@ -7,7 +7,7 @@ export default function Home() {
       <div className="flex items-center gap-2.5">
         <Button asChild variant="outline">
           <a
-            href="https://github.com/mancuoj-collective/next-tmpl-lite"
+            href="https://github.com/mancuoj-collective/next-tmpl"
             target="_blank"
             rel="noopener noreferrer"
           >

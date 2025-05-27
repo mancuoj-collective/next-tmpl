@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import { ThemeProvider } from 'next-themes'
-import { Toaster } from '@/components/ui/sonner'
+import { RootProvider } from '@/components/providers'
 import { fontMono, fontSans, fontSerif } from '@/config/font'
 import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
@@ -29,10 +28,9 @@ export default function RootLayout({
           'font-sans antialiased',
         )}
       >
-        <ThemeProvider attribute="class" storageKey="next-tmpl-theme" disableTransitionOnChange>
+        <RootProvider>
           {children}
-          <Toaster />
-        </ThemeProvider>
+        </RootProvider>
       </body>
     </html>
   )
