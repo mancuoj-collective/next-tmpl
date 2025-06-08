@@ -5,7 +5,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbopack",
-    "lint": "eslint --fix",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "prepare": "simple-git-hooks",
     "start": "next start"
   },

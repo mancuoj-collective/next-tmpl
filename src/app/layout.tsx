@@ -1,8 +1,11 @@
+import '@/styles/globals.css'
+
 import type { Metadata } from 'next'
-import { RootProvider } from './providers'
+
 import { fontMono, fontSans, fontSerif } from '@/config/font'
 import { cn } from '@/lib/utils'
-import '@/styles/globals.css'
+
+import { RootProvider } from './providers'
 
 export const metadata: Metadata = {
   title: 'Next',

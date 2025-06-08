@@ -15,7 +15,7 @@ export function useDark() {
     }
     document.startViewTransition(setIsDark)
   }
-  
+
   return {
     isDark,
     toggleDark,

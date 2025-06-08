@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center h-svh">
+    <div className="flex h-svh flex-col items-center justify-center">
       <div className="flex items-center gap-2.5">
         <Button asChild variant="outline">
           <a
