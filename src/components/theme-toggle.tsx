@@ -1,27 +1,16 @@
 'use client'
 
-import { MoonIcon, SunIcon } from 'lucide-react'
-import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
+import { useDark } from '@/hooks/use-dark'
+import { cn } from '@/lib/utils'
 
-export function ThemeToggle() {
-  const { resolvedTheme, setTheme } = useTheme()
-
-  function switchTheme() {
-    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
-  }
-
-  function toggleTheme() {
-    if (!document.startViewTransition) {
-      switchTheme()
-    }
-    document.startViewTransition(switchTheme)
-  }
+export function ThemeToggle({ className }: { className?: string }) {
+  const { toggleDark } = useDark()
 
   return (
-    <Button variant="outline" size="icon" onClick={toggleTheme}>
-      <SunIcon className="size-4.5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <MoonIcon className="absolute size-4.5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+    <Button variant="outline" size="icon" onClick={toggleDark} className={cn('flex', className)}>
+      <span className="iconify carbon--sun scale-100 dark:scale-0 transition-transform duration-500 rotate-0 dark:-rotate-90" />
+      <span className="iconify carbon--moon absolute scale-0 dark:scale-100 transition-transform duration-500 rotate-90 dark:rotate-0" />
       <span className="sr-only">Toggle theme</span>
     </Button>
   )

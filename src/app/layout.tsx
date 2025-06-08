@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { RootProvider } from '@/components/providers'
+import { RootProvider } from './providers'
 import { fontMono, fontSans, fontSerif } from '@/config/font'
 import { cn } from '@/lib/utils'
 import '@/styles/globals.css'

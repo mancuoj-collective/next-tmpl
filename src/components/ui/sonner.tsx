@@ -1,11 +1,11 @@
 'use client'
 
+import { useDark } from '@/hooks/use-dark'
 import type { ToasterProps } from 'sonner'
-import { useTheme } from 'next-themes'
 import { Toaster as Sonner } from 'sonner'
 
 function Toaster({ ...props }: ToasterProps) {
-  const { theme = 'system' } = useTheme()
+  const { theme } = useDark()
 
   return (
     <Sonner

@@ -1,6 +1,11 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+@plugin "@iconify/tailwind4" {
+  prefixes: carbon;
+  scale: 1.15;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -211,7 +216,7 @@
 
 /* view transition */
 ::view-transition-group(root) {
-  animation-duration: 0.7s;
+  animation-duration: 500ms;
   animation-timing-function: ease-in-out;
 }
 
