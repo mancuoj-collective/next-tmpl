@@ -14,12 +14,10 @@ export async function middleware(request: NextRequest) {
 
   const { pathname } = request.nextUrl
 
-  // If user is not authenticated and trying to access protected route
   if (!session && protectedRoutes.some(route => pathname.startsWith(route))) {
     return NextResponse.redirect(new URL('/sign-in', request.url))
   }
 
-  // If user is authenticated but trying to access auth routes
   if (session && authRoutes.some(route => pathname.startsWith(route))) {
     return NextResponse.redirect(new URL('/dashboard', request.url))
   }

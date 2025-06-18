@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { useDark } from '@/hooks/use-dark'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/cn'
 
 export function ThemeToggle({ className }: { className?: string }) {
   const { toggleDark } = useDark()

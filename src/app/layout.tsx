@@ -3,7 +3,7 @@ import '@/styles/globals.css'
 import type { Metadata } from 'next'
 
 import { fontMono, fontSans, fontSerif } from '@/config/font'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/cn'
 
 import { RootProvider } from './providers'
 
