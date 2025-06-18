@@ -1,11 +1,10 @@
-import { drizzle } from 'drizzle-orm/node-postgres'
-import { Pool } from 'pg'
+import { createClient } from '@libsql/client'
+import { drizzle } from 'drizzle-orm/libsql'
 
 import { env } from '@/env'
 
-import * as schema from './schema'
-
-const sql = new Pool({
-  connectionString: env.DATABASE_URL,
+const client = createClient({
+  url: env.TURSO_DATABASE_URL,
+  authToken: env.TURSO_AUTH_TOKEN,
 })
-export const db = drizzle(sql, { schema })
+export const db = drizzle({ client })
