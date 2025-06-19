@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/shadcn/button'
 import { useDark } from '@/hooks/use-dark'
 import { cn } from '@/lib/cn'
 

@@ -1,0 +1,43 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/shadcn/avatar'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/shadcn/dropdown-menu'
+import { signOut, useSession } from '@/lib/auth/client'
+
+export function UserMenu() {
+  const router = useRouter()
+  const { data } = useSession()
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger>
+        <Avatar className="size-10 rounded-full select-none">
+          <AvatarImage src={data?.user.image ?? ''} alt={data?.user.name ?? ''} />
+          <AvatarFallback>{data?.user.name?.charAt(0)}</AvatarFallback>
+        </Avatar>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-52" align="start">
+        <DropdownMenuLabel className="text-sm font-medium">
+          <p>{data?.user.name}</p>
+          <p className="mt-1.5 text-muted-foreground">{data?.user.email}</p>
+        </DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem
+          className="text-muted-foreground hover:text-foreground"
+          onClick={() => signOut({ fetchOptions: { onSuccess: () => router.push('/') } })}
+        >
+          Logout
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
+}

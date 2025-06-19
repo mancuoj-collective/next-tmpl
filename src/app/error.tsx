@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useEffect } from 'react'
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/shadcn/button'
 
 export default function Error({
   error,

@@ -1,6 +1,6 @@
 import { Provider } from 'jotai'
 
-import { Toaster } from '@/components/ui/sonner'
+import { Toaster } from '@/components/shadcn/sonner'
 
 export function RootProvider({ children }: { children: React.ReactNode }) {
   return (

@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@iconify-json/carbon": "^1.2.9",
+    "@iconify-json/tabler": "^1.2.19",
     "@iconify/tailwind4": "^1.0.6",
     "@libsql/client": "^0.15.9",
     "@t3-oss/env-nextjs": "^0.13.8",
@@ -26,6 +27,8 @@
     "jotai": "^2.12.5",
     "jotai-dark": "^0.4.0",
     "jotai-effect": "^2.0.4",
+    "lucide-react": "^0.518.0",
+    "motion": "^12.18.1",
     "next": "15.4.0-canary.85",
     "radix-ui": "latest",
     "react": "^19.1.0",
