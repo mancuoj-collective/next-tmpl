@@ -35,15 +35,6 @@ importers:
       drizzle-orm:
         specifier: ^0.44.2
         version: 0.44.2(@libsql/client@0.15.9)(@types/pg@8.15.4)(kysely@0.28.2)(pg@8.16.0)
-      jotai:
-        specifier: ^2.12.5
-        version: 2.12.5(@types/react@19.1.8)(react@19.1.0)
-      jotai-dark:
-        specifier: ^0.4.0
-        version: 0.4.0(jotai-effect@2.0.4(jotai@2.12.5(@types/react@19.1.8)(react@19.1.0)))(jotai@2.12.5(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)
-      jotai-effect:
-        specifier: ^2.0.4
-        version: 2.0.4(jotai@2.12.5(@types/react@19.1.8)(react@19.1.0))
       lucide-react:
         specifier: ^0.518.0
         version: 0.518.0(react@19.1.0)
@@ -53,6 +44,9 @@ importers:
       next:
         specifier: 15.4.0-canary.85
         version: 15.4.0-canary.85(@babel/core@7.27.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      next-themes:
+        specifier: ^0.4.6
+        version: 0.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       radix-ui:
         specifier: latest
         version: 1.4.2(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -2856,38 +2850,6 @@ packages:
   jose@5.10.0:
     resolution: {integrity: sha512-s+3Al/p9g32Iq+oqXxkW//7jk2Vig6FF1CFqzVXoTUXt2qz89YWbL+OwS17NFYEvxC35n0FKeGO2LGYSxeM2Gg==}
 
-  jotai-dark@0.4.0:
-    resolution: {integrity: sha512-1RUmCRqzZFcFrVJwuG4BZ3kDPNjElFXA1FH8X77rPqhFDkSy79rpTrzfMBAx2pZauQvXBRQWN3fJ1p+CF2JO4g==}
-    peerDependencies:
-      jotai: '>=2.5.0'
-      jotai-effect: '*'
-      react: '>=18.2.0'
-    peerDependenciesMeta:
-      jotai:
-        optional: true
-      jotai-effect:
-        optional: true
-      react:
-        optional: true
-
-  jotai-effect@2.0.4:
-    resolution: {integrity: sha512-V2ARMu1JvRCie43X6SwCXPpecMR+cRI7JuSoOz/6uziOEQJnziJFRzvWHoWple+DvWdARHcFMjlIp+BEDsUoVQ==}
-    engines: {node: '>=12.20.0'}
-    peerDependencies:
-      jotai: '>=2.12.1'
-
-  jotai@2.12.5:
-    resolution: {integrity: sha512-G8m32HW3lSmcz/4mbqx0hgJIQ0ekndKWiYP7kWVKi0p6saLXdSoye+FZiOFyonnd7Q482LCzm8sMDl7Ar1NWDw==}
-    engines: {node: '>=12.20.0'}
-    peerDependencies:
-      '@types/react': '>=17.0.0'
-      react: '>=17.0.0'
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react:
-        optional: true
-
   js-base64@3.7.7:
     resolution: {integrity: sha512-7rCnleh0z2CkXhH67J8K1Ytz0b2Y+yxTPL+/KOJoa20hfnVQ/3/T6W/KflYI4bRHRagNeXeU2bkNGI3v1oS/lw==}
 
@@ -3141,6 +3103,12 @@ packages:
 
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+
+  next-themes@0.4.6:
+    resolution: {integrity: sha512-pZvgD5L0IEvX5/9GWyHMf3m8BKiVQwsCMHfoFosXtXBMnaS0ZnIJ9ST4b4NqLVKDEm8QBxoNNGNaBv2JNF6XNA==}
+    peerDependencies:
+      react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
 
   next@15.4.0-canary.85:
     resolution: {integrity: sha512-xD+Es5CYPkb20//rQ9/vmWhx1TCohe8V2BhVzwkMv9UwAF8wMUK4GCyHyyXnvxqlNRfGG8KhDjS4IaTxq1ShEg==}
@@ -6565,21 +6533,6 @@ snapshots:
 
   jose@5.10.0: {}
 
-  jotai-dark@0.4.0(jotai-effect@2.0.4(jotai@2.12.5(@types/react@19.1.8)(react@19.1.0)))(jotai@2.12.5(@types/react@19.1.8)(react@19.1.0))(react@19.1.0):
-    optionalDependencies:
-      jotai: 2.12.5(@types/react@19.1.8)(react@19.1.0)
-      jotai-effect: 2.0.4(jotai@2.12.5(@types/react@19.1.8)(react@19.1.0))
-      react: 19.1.0
-
-  jotai-effect@2.0.4(jotai@2.12.5(@types/react@19.1.8)(react@19.1.0)):
-    dependencies:
-      jotai: 2.12.5(@types/react@19.1.8)(react@19.1.0)
-
-  jotai@2.12.5(@types/react@19.1.8)(react@19.1.0):
-    optionalDependencies:
-      '@types/react': 19.1.8
-      react: 19.1.0
-
   js-base64@3.7.7: {}
 
   js-tokens@4.0.0: {}
@@ -6805,6 +6758,11 @@ snapshots:
   napi-postinstall@0.2.4: {}
 
   natural-compare@1.4.0: {}
+
+  next-themes@0.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   next@15.4.0-canary.85(@babel/core@7.27.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
