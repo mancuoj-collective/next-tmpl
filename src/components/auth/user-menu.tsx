@@ -25,36 +25,45 @@ export function UserMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Avatar className="size-10 rounded-full select-none">
+        <Avatar className="size-9 rounded-full select-none">
           <AvatarImage src={data?.user.image ?? ''} alt={data?.user.name ?? ''} />
           <AvatarFallback>{data?.user.name?.charAt(0)}</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-52" align="start">
-        <DropdownMenuLabel className="text-sm font-medium">
-          <p>{data?.user.name}</p>
+      <DropdownMenuContent className="w-52 text-foreground/85 transition-colors" align="start">
+        <DropdownMenuLabel>
+          <p className="text-sm font-medium text-foreground">{data?.user.name}</p>
           <p className="mt-1 text-xs text-muted-foreground">{data?.user.email}</p>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
-          <Link href="/">Homepage</Link>
+          <Link href="/" className="text-xs">
+            <span className="iconify carbon--settings" />
+            Preferences
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <Link href="/" className="text-xs">
+            <span className="iconify carbon--home" />
+            Homepage
+          </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuLabel className="text-sm">Theme</DropdownMenuLabel>
+        <DropdownMenuLabel className="text-xs text-muted-foreground">Theme</DropdownMenuLabel>
         <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
-          <DropdownMenuRadioItem className="text-sm" value="light">
+          <DropdownMenuRadioItem className="text-xs" value="light">
             Light
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem className="text-sm" value="dark">
+          <DropdownMenuRadioItem className="text-xs" value="dark">
             Dark
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem className="text-sm" value="system">
+          <DropdownMenuRadioItem className="text-xs" value="system">
             System
           </DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem
-          className="text-sm"
+          className="text-xs"
           onClick={() => signOut({ fetchOptions: { onSuccess: () => router.push('/') } })}
         >
           Logout
