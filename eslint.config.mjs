@@ -19,6 +19,8 @@ export default defineConfig(
     rules: {
       'tailwindcss/no-custom-classname': 'off',
       'react-refresh/only-export-components': 'off',
+      '@eslint-react/no-context-provider': 'off',
+      '@eslint-react/no-nested-component-definitions': 'off',
     },
   },
 )
