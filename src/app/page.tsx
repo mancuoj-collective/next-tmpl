@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 import { Button } from '@/components/shadcn/button'
-import { ThemeToggle } from '@/components/theme-toggle'
 
 export default function Home() {
   return (
@@ -12,16 +11,11 @@ export default function Home() {
             Sign in
           </Link>
         </Button>
-        <Button asChild variant="outline">
-          <a
-            href="https://github.com/mancuoj-collective/next-tmpl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
+        <Button asChild>
+          <Link href="/dashboard">
+            Start your project
+          </Link>
         </Button>
-        <ThemeToggle />
       </div>
     </div>
   )

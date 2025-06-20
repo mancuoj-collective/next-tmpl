@@ -1,17 +1,11 @@
-import { ThemeProvider } from 'next-themes'
-
 import { Toaster } from '@/components/shadcn/sonner'
+import { ThemeProvider } from '@/components/theme/provider'
 
 export function RootProvider({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider
-      attribute="class"
-      storageKey="next-tmpl-theme"
-      enableSystem
-      disableTransitionOnChange
-    >
+    <ThemeProvider>
       {children}
-      <Toaster />
+      <Toaster position="top-right" richColors />
     </ThemeProvider>
   )
 }
