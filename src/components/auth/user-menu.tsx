@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useTheme } from 'next-themes'
+import { toast } from 'sonner'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/shadcn/avatar'
 import {
@@ -15,19 +16,29 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/shadcn/dropdown-menu'
+import { Skeleton } from '@/components/shadcn/skeleton'
 import { signOut, useSession } from '@/lib/auth/client'
 
 export function UserMenu() {
   const router = useRouter()
-  const { data } = useSession()
+  const { data, isPending, error } = useSession()
   const { theme, setTheme } = useTheme()
+
+  if (error) {
+    toast.error(error.message || 'Unknown error')
+    router.push('/sign-in')
+  }
+
+  if (isPending) {
+    return <Skeleton className="size-9 rounded-full" />
+  }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
         <Avatar className="size-9 rounded-full select-none">
-          <AvatarImage src={data?.user.image ?? ''} alt={data?.user.name ?? ''} />
-          <AvatarFallback>{data?.user.name?.charAt(0)}</AvatarFallback>
+          <AvatarImage src={data?.user.image || undefined} alt={data?.user.name || 'Avatar'} />
+          <AvatarFallback>{data?.user.name?.charAt(0) || 'U'}</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-52 text-foreground/85 transition-colors" align="start">
