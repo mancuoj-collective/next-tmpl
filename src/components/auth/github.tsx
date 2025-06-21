@@ -6,7 +6,7 @@ import { Button } from '@/components/shadcn/button'
 import { signIn } from '@/lib/auth/client'
 import { cn } from '@/lib/cn'
 
-export function SignIn() {
+export function Github() {
   const [isLoading, setIsLoading] = useState(false)
 
   return (

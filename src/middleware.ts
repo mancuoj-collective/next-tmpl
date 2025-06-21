@@ -5,7 +5,7 @@ import { NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
 
 const protectedRoutes = ['/dashboard']
-const authRoutes = ['/sign-in']
+const authRoutes = ['/sign-in', '/sign-up']
 
 export async function middleware(request: NextRequest) {
   const session = await auth.api.getSession({

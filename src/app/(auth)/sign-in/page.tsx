@@ -1,5 +1,5 @@
-import { SignIn } from '@/components/auth/sign-in'
+import { SignCard } from '@/components/auth/sign-card'
 
 export default function SignInPage() {
-  return <SignIn />
+  return <SignCard title="Welcome back" description="Sign in to your account" mode="sign-in" />
 }

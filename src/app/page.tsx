@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import { Button } from '@/components/shadcn/button'
+import { ThemeToggle } from '@/components/theme/toggle'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
             Start your project
           </Link>
         </Button>
+        <ThemeToggle />
       </div>
     </div>
   )
