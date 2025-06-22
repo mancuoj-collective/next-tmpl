@@ -75,7 +75,21 @@ export function UserMenu() {
         <DropdownMenuSeparator />
         <DropdownMenuItem
           className="text-xs"
-          onClick={() => signOut({ fetchOptions: { onSuccess: () => router.push('/') } })}
+          onClick={async () => {
+            const promise = signOut({
+              fetchOptions: {
+                onSuccess: () => {
+                  router.push('/')
+                  router.refresh()
+                },
+              },
+            })
+            toast.promise(promise, {
+              loading: 'Logging out...',
+              success: 'Logged out successfully',
+              error: err => err.message || 'Failed to logout',
+            })
+          }}
         >
           Logout
         </DropdownMenuItem>
