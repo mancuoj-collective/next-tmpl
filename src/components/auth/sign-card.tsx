@@ -19,9 +19,9 @@ export function SignCard({
   const isSignIn = mode === 'sign-in'
 
   return (
-    <div className="flex w-[333px] flex-col">
+    <div className="flex w-[333px] flex-col md:w-[400px]">
       <div className="mt-8 mb-10 flex flex-col gap-2">
-        <h1 className="text-2xl font-semibold lg:text-3xl">{title}</h1>
+        <h1 className="-m-0.5 text-2xl font-semibold lg:text-3xl">{title}</h1>
         <p className="text-sm text-muted-foreground">{description}</p>
       </div>
       <div className="flex flex-col gap-5">
