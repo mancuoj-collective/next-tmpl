@@ -14,6 +14,9 @@ importers:
       '@iconify-json/carbon':
         specifier: ^1.2.10
         version: 1.2.10
+      '@iconify-json/fluent-emoji':
+        specifier: ^1.2.3
+        version: 1.2.3
       '@iconify-json/tabler':
         specifier: ^1.2.19
         version: 1.2.19
@@ -716,6 +719,9 @@ packages:
 
   '@iconify-json/carbon@1.2.10':
     resolution: {integrity: sha512-Z+psKjwGZ9wZu+mVOStmIqHux1OWc8AtDiJ4eHmOkbcW5SMoGVtsQ6LWGJcYguT+9q9YgGihUTvHEnQSPWKGiQ==}
+
+  '@iconify-json/fluent-emoji@1.2.3':
+    resolution: {integrity: sha512-q9oSqx463rVTQbPbVwvpOkeVii+9BifvJcluv5lqs5ybdab4lnVnpQ/uE2zAseFGOWNygKJsXZl6HbgV9HGhZw==}
 
   '@iconify-json/tabler@1.2.19':
     resolution: {integrity: sha512-JDeQTQxHD8KE12pAbPVHX1WFVOPq8D0XfRb/LwYHwGwYE0HP9OIjJ//TKxS1Gt++RirYu6Xsx+Jm5LA5KbykoA==}
@@ -4551,6 +4557,10 @@ snapshots:
       tailwindcss: 4.1.10
 
   '@iconify-json/carbon@1.2.10':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/fluent-emoji@1.2.3':
     dependencies:
       '@iconify/types': 2.0.0
 

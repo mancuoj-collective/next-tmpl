@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import { toast } from 'sonner'
@@ -30,35 +29,22 @@ export function UserMenu() {
   }
 
   if (isPending) {
-    return <Skeleton className="size-9 rounded-full" />
+    return <Skeleton className="size-8 rounded-full" />
   }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Avatar className="size-9 rounded-full select-none">
+        <Avatar className="size-8 rounded-full select-none">
           <AvatarImage src={data?.user.image || undefined} alt={data?.user.name || 'Avatar'} />
           <AvatarFallback>{data?.user.name?.charAt(0) || 'U'}</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-52 text-foreground/85 transition-colors" align="start">
+      <DropdownMenuContent className="w-58" align="end">
         <DropdownMenuLabel>
           <p className="text-sm font-medium text-foreground">{data?.user.name}</p>
-          <p className="mt-1 text-xs text-muted-foreground">{data?.user.email}</p>
+          <p className="mt-1 text-xs text-muted-foreground/70">{data?.user.email}</p>
         </DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
-          <Link href="/" className="text-xs">
-            <span className="iconify carbon--settings" />
-            Preferences
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href="/" className="text-xs">
-            <span className="iconify carbon--home" />
-            Homepage
-          </Link>
-        </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuLabel className="text-xs text-muted-foreground">Theme</DropdownMenuLabel>
         <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>

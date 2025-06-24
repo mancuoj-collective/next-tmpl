@@ -1,9 +1,7 @@
-import { UserMenu } from '@/components/auth/user-menu'
-
 export default function DashboardPage() {
   return (
-    <div>
-      <UserMenu />
+    <div className="flex h-full items-center justify-center">
+      <h1 className="font-serif text-4xl">WIP</h1>
     </div>
   )
 }

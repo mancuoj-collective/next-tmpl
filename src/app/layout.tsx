@@ -9,10 +9,10 @@ import { RootProvider } from './providers'
 
 export const metadata: Metadata = {
   title: 'Next',
-  description: 'Next.js template lite version',
+  description: 'Next.js template',
   icons: {
-    icon: '/next.svg',
-    shortcut: '/next.svg',
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
   },
 }
 
