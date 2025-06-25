@@ -1,6 +1,7 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
+import Link from 'next/link'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -72,7 +73,12 @@ export function SignInForm() {
           name="password"
           render={({ field, fieldState }) => (
             <FormItem>
-              <FormLabel className="text-muted-foreground">Password</FormLabel>
+              <div className="flex items-center justify-between">
+                <FormLabel className="text-muted-foreground">Password</FormLabel>
+                <Link href="/forgot-password" className="text-sm text-muted-foreground/70 tracking-tight leading-none font-medium select-none">
+                  Forgot Password?
+                </Link>
+              </div>
               <div className="relative">
                 <FormControl>
                   <Input type="password" placeholder="••••••••" {...field} />
