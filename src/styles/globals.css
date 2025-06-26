@@ -4,8 +4,7 @@
 @import 'tw-animate-css';
 
 @plugin "@iconify/tailwind4" {
-  prefixes: carbon, tabler, fluent-emoji;
-  scale: 1.15;
+  prefixes: carbon, tabler;
 }
 
 @custom-variant dark (&:is(.dark *));

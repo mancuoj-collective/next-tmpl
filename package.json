@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "build": "NODE_OPTIONS=--max-old-space-size=1536 next build",
+    "build": "NODE_OPTIONS=--max-old-space-size=1236 next build",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
@@ -16,10 +16,6 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
-    "@iconify-json/carbon": "^1.2.10",
-    "@iconify-json/fluent-emoji": "^1.2.3",
-    "@iconify-json/tabler": "^1.2.19",
-    "@iconify/tailwind4": "^1.0.6",
     "@libsql/client": "^0.15.9",
     "@t3-oss/env-nextjs": "^0.13.8",
     "better-auth": "^1.2.10",
@@ -32,7 +28,7 @@
     "input-otp": "^1.4.2",
     "lucide-react": "^0.522.0",
     "motion": "^12.19.1",
-    "next": "15.4.0-canary.96",
+    "next": "15.4.0-canary.98",
     "next-themes": "^0.4.6",
     "nuqs": "^2.4.3",
     "radix-ui": "latest",
@@ -48,6 +44,9 @@
     "zod": "^3.25.67"
   },
   "devDependencies": {
+    "@iconify-json/carbon": "^1.2.10",
+    "@iconify-json/tabler": "^1.2.19",
+    "@iconify/tailwind4": "^1.0.6",
     "@tailwindcss/postcss": "^4.1.10",
     "@types/node": "^24.0.4",
     "@types/react": "^19.1.8",
