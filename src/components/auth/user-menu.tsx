@@ -20,13 +20,8 @@ import { signOut, useSession } from '@/lib/auth/client'
 
 export function UserMenu() {
   const router = useRouter()
-  const { data, isPending, error } = useSession()
+  const { data, isPending } = useSession()
   const { theme, setTheme } = useTheme()
-
-  if (error) {
-    toast.error(error.message || 'Unknown error')
-    router.push('/sign-in')
-  }
 
   if (isPending) {
     return <Skeleton className="size-8 rounded-full" />
@@ -34,19 +29,19 @@ export function UserMenu() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
+      <DropdownMenuTrigger className="outline-none">
         <Avatar className="size-8 rounded-full select-none">
           <AvatarImage src={data?.user.image || undefined} alt={data?.user.name || 'Avatar'} />
           <AvatarFallback>{data?.user.name?.charAt(0) || 'U'}</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-58" align="end">
+      <DropdownMenuContent className="w-54" align="end" sideOffset={8}>
         <DropdownMenuLabel>
           <p className="text-sm font-medium text-foreground">{data?.user.name}</p>
-          <p className="mt-1 text-xs text-muted-foreground/70">{data?.user.email}</p>
+          <p className="mt-1 text-xs text-muted-foreground/80">{data?.user.email}</p>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuLabel className="text-xs text-muted-foreground">Theme</DropdownMenuLabel>
+        <DropdownMenuLabel className="text-xs">Theme</DropdownMenuLabel>
         <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
           <DropdownMenuRadioItem className="text-xs" value="light">
             Light

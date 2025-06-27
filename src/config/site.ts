@@ -1,11 +1,10 @@
-import { env } from './env'
-
 export const siteConfig = {
   author: 'mancuoj',
   name: 'Next Tmpl',
   description: 'Next.js Starter Template with Modern Tech Stack (2025)',
-  origin: env.BETTER_AUTH_URL,
+  origin: 'https://next-tmpl.mancuoj.me',
   og: 'https://next-tmpl.mancuoj.me/og.png',
+  repo: 'https://github.com/mancuoj-collective/next-tmpl',
   keywords: [
     'Next.js 15',
     'React 19',
