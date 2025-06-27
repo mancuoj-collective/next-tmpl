@@ -124,7 +124,7 @@ export function SignUpForm() {
         {showPasswordRequirements && (
           <div className={cn(
             'animate-in duration-500 fade-in slide-in-from-top-3',
-            'mb-4 flex flex-col gap-1 text-sm text-muted-foreground',
+            'mb-2 flex flex-col gap-1 text-sm text-muted-foreground',
           )}
           >
             {passwordRequirements.map(({ label, isMet, show }) => (

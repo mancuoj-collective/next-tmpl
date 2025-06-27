@@ -5,7 +5,7 @@ import { useSpinDelay } from 'spin-delay'
 import { WaveSpinner } from '@/components/wave-spinner'
 
 export default function Loading() {
-  const showSpinner = useSpinDelay(true, { delay: 10, minDuration: 200 })
+  const showSpinner = useSpinDelay(true, { delay: 500, minDuration: 300 })
 
   if (!showSpinner) {
     return null
