@@ -14,10 +14,6 @@ export const metadata: Metadata = {
   keywords: siteConfig.keywords,
   creator: siteConfig.author,
   metadataBase: new URL(siteConfig.origin),
-  icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-  },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
@@ -29,8 +25,8 @@ export const metadata: Metadata = {
       {
         url: siteConfig.og,
         alt: siteConfig.name,
-        width: 2880,
-        height: 1800,
+        width: 1200,
+        height: 630,
       },
     ],
   },
@@ -38,14 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [
-      {
-        url: siteConfig.og,
-        alt: siteConfig.name,
-        width: 2880,
-        height: 1800,
-      },
-    ],
+    images: [siteConfig.og],
   },
 }
 

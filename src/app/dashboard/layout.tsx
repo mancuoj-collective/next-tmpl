@@ -23,7 +23,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           {isMobile && <SidebarTrigger />}
           <div className="flex items-center gap-3">
             <Button variant="outline" size="sm" className="text-xs rounded-full" asChild>
-              <a href={`${siteConfig.repo}/issues`} target="_blank" rel="noopener noreferrer">
+              <a href={`${siteConfig.repo}/issues/new`} target="_blank" rel="noopener noreferrer">
                 Feedback
               </a>
             </Button>

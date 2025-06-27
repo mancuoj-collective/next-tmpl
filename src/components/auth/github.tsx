@@ -26,8 +26,8 @@ export function Github() {
     >
       <span
         className={cn(
-          'iconify',
-          isLoading ? 'animate-spin tabler--loader' : 'tabler--brand-github',
+          'iconify size-4',
+          isLoading ? 'animate-spin tabler--loader' : 'carbon--logo-github',
         )}
       />
       Continue with GitHub
