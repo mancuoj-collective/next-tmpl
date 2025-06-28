@@ -30,7 +30,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <UserMenu />
           </div>
         </header>
-        <div className="flex-1 flex justify-center items-center">
+        <div className="flex-1 flex flex-col">
           {children}
         </div>
       </main>

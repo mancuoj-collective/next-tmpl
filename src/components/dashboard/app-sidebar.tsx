@@ -28,13 +28,8 @@ const navItems: NavItem[] = [
     icon: 'tabler--chart-bar',
   },
   {
-    title: 'Inbox',
-    url: '#',
-    icon: 'tabler--inbox',
-  },
-  {
     title: 'Settings',
-    url: '#',
+    url: '/dashboard/settings',
     icon: 'tabler--settings',
   },
 ]
