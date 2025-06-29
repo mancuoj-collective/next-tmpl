@@ -1,8 +1,6 @@
-import { eq } from 'drizzle-orm'
-import { headers } from 'next/headers'
+'use server'
 
-import { db } from '@/lib/db'
-import { account } from '@/lib/db/schema'
+import { headers } from 'next/headers'
 
 import { auth } from '.'
 
@@ -14,17 +12,10 @@ export async function getSession() {
 }
 
 export async function getProviderId(userId: string) {
-  const accounts = await db
-    .select({
-      providerId: account.providerId,
-    })
-    .from(account)
-    .where(eq(account.userId, userId))
-    .limit(1)
-
-  if (accounts.length === 0) {
+  const ctx = await auth.$context
+  const account = await ctx.internalAdapter.findAccountByUserId(userId)
+  if (account.length === 0) {
     return ''
   }
-
-  return accounts[0].providerId
+  return account[0].providerId
 }
