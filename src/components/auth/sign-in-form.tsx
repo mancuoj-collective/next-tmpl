@@ -43,7 +43,7 @@ export function SignInForm() {
           toast.error(
             'Please check your email for a confirmation link, expires in 10 minutes.',
             {
-              duration: 20 * 1000, // 20 seconds
+              duration: 15 * 1000, // 15 seconds
               closeButton: true,
             },
           )

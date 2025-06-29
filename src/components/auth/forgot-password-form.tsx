@@ -40,7 +40,7 @@ export function ForgotPasswordForm() {
           'Reset your password',
           {
             description: 'If you registered using your email and password, you will receive a password reset email. The password reset link expires in 10 minutes.',
-            duration: 20 * 1000, // 20 seconds
+            duration: 15 * 1000, // 15 seconds
             closeButton: true,
             richColors: false,
           },
