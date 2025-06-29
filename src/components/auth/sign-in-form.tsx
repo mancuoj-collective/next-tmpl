@@ -10,6 +10,7 @@ import { z } from 'zod'
 import { Button } from '@/components/shadcn/button'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/shadcn/form'
 import { Input } from '@/components/shadcn/input'
+import { signIn } from '@/lib/auth/client'
 
 const signInSchema = z.object({
   email: z.string().min(1, 'Email is required').email('Must be a valid email'),
@@ -27,23 +28,30 @@ export function SignInForm() {
     mode: 'onTouched',
   })
 
-  function onSubmit(values: z.infer<typeof signInSchema>) {
-    // eslint-disable-next-line no-console
-    console.log(values)
-
-    setIsSubmitting(true)
-    const promise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        Math.random() > 0.5 ? resolve(true) : reject(new Error('Invalid login credentials'))
-      }, 1000)
-    }).finally(() => {
-      setIsSubmitting(false)
-    })
-
-    toast.promise(promise, {
-      loading: 'Signing in...',
-      success: 'Signed in successfully',
-      error: error => error.message || 'Unknown error',
+  async function onSubmit(values: z.infer<typeof signInSchema>) {
+    await signIn.email({
+      email: values.email,
+      password: values.password,
+      callbackURL: '/dashboard',
+    }, {
+      onRequest: () => {
+        setIsSubmitting(true)
+      },
+      onError: (ctx) => {
+        setIsSubmitting(false)
+        if (ctx.error.status === 403) {
+          toast.error(
+            'Please check your email for a confirmation link, expires in 10 minutes.',
+            {
+              duration: 20 * 1000, // 20 seconds
+              closeButton: true,
+            },
+          )
+        }
+        else {
+          toast.error(ctx.error.message || 'Unknown error')
+        }
+      },
     })
   }
 

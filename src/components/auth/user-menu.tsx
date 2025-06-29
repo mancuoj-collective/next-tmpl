@@ -27,18 +27,31 @@ export function UserMenu() {
     return <Skeleton className="size-8 rounded-full" />
   }
 
+  if (!data || !data.user) {
+    return null
+  }
+
+  const { user } = data
+  const isRegisteredByEmail = user.name === user.email
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="outline-none">
-        <Avatar className="size-8 rounded-full select-none">
-          <AvatarImage src={data?.user.image || undefined} alt={data?.user.name || 'Avatar'} />
-          <AvatarFallback>{data?.user.name?.charAt(0) || 'U'}</AvatarFallback>
+        <Avatar className="size-8 rounded-full border shadow select-none">
+          <AvatarImage src={user.image || undefined} alt={user.name || 'Avatar'} />
+          <AvatarFallback className="text-sm">{user.name?.charAt(0).toUpperCase() || 'U'}</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-54" align="end" sideOffset={8}>
         <DropdownMenuLabel>
-          <p className="text-sm font-medium text-foreground">{data?.user.name}</p>
-          <p className="mt-1 text-xs text-muted-foreground/80">{data?.user.email}</p>
+          {isRegisteredByEmail ? (
+            <p className="text-xs text-foreground">{user.name}</p>
+          ) : (
+            <>
+              <p className="text-sm font-medium text-foreground">{user.name}</p>
+              <p className="mt-1 text-xs text-muted-foreground/80">{user.email}</p>
+            </>
+          )}
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuLabel className="text-xs">Theme</DropdownMenuLabel>

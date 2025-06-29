@@ -1,3 +1,5 @@
+'use client'
+
 import { Github } from '@/components/auth/github'
 import { Separator } from '@/components/shadcn/separator'
 

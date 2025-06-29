@@ -1,14 +1,17 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
+import { CheckCircleIcon } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { z } from 'zod'
 
+import { Alert, AlertDescription, AlertTitle } from '@/components/shadcn/alert'
 import { Button } from '@/components/shadcn/button'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/shadcn/form'
 import { Input } from '@/components/shadcn/input'
+import { signUp } from '@/lib/auth/client'
 import { cn } from '@/lib/cn'
 
 const signUpSchema = z.object({
@@ -26,6 +29,7 @@ const signUpSchema = z.object({
 export function SignUpForm() {
   const [showPassword, setShowPassword] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const [showPasswordRequirements, setShowPasswordRequirements] = useState(false)
   const form = useForm<z.infer<typeof signUpSchema>>({
     resolver: zodResolver(signUpSchema),
@@ -47,23 +51,39 @@ export function SignUpForm() {
   ]
 
   function onSubmit(values: z.infer<typeof signUpSchema>) {
-    // eslint-disable-next-line no-console
-    console.log(values)
-
-    setIsSubmitting(true)
-    const promise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        Math.random() > 0.5 ? resolve(true) : reject(new Error('Failed to sign up'))
-      }, 1000)
-    }).finally(() => {
-      setIsSubmitting(false)
+    const promise = signUp.email({
+      email: values.email,
+      password: values.password,
+      name: values.email,
+    }, {
+      onRequest: () => {
+        setIsSubmitting(true)
+      },
+      onSuccess: () => {
+        setIsSubmitted(true)
+      },
+      onError: () => {
+        setIsSubmitting(false)
+      },
     })
 
     toast.promise(promise, {
       loading: 'Signing up...',
-      success: 'Signed up successfully',
+      success: 'Signed up successfully!',
       error: error => error.message || 'Unknown error',
     })
+  }
+
+  if (isSubmitted) {
+    return (
+      <Alert>
+        <CheckCircleIcon />
+        <AlertTitle>Check your email to confirm</AlertTitle>
+        <AlertDescription>
+          You've successfully signed up. Please check your email to confirm your account before signing in to the dashboard. The confirmation link expires in 10 minutes.
+        </AlertDescription>
+      </Alert>
+    )
   }
 
   return (
