@@ -80,8 +80,8 @@ export function UserMenu() {
             })
             toast.promise(promise, {
               loading: 'Logging out...',
-              success: 'Logged out successfully',
-              error: err => err.message || 'Failed to logout',
+              success: 'Logged out successfully!',
+              error: err => err.message || 'Failed to logout.',
             })
           }}
         >

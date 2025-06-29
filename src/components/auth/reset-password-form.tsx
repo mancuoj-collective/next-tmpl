@@ -58,7 +58,7 @@ export function ResetPasswordForm() {
     toast.promise(promise, {
       loading: 'Saving new password...',
       success: 'New password saved successfully!',
-      error: error => error.message || 'Unknown error',
+      error: error => error.message || 'Unknown error.',
     })
   }
 

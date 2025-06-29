@@ -49,7 +49,7 @@ export function SignInForm() {
           )
         }
         else {
-          toast.error(ctx.error.message || 'Unknown error')
+          toast.error(ctx.error.message || 'Unknown error.')
         }
       },
     })

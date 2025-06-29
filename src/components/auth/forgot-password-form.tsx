@@ -48,7 +48,7 @@ export function ForgotPasswordForm() {
         router.push('/sign-in')
       },
       onError: (ctx) => {
-        toast.error(ctx.error.message || 'Unknown error')
+        toast.error(ctx.error.message || 'Unknown error.')
       },
     })
   }

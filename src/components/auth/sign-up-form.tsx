@@ -70,7 +70,7 @@ export function SignUpForm() {
     toast.promise(promise, {
       loading: 'Signing up...',
       success: 'Signed up successfully!',
-      error: error => error.message || 'Unknown error',
+      error: error => error.message || 'Unknown error.',
     })
   }
 
