@@ -1,7 +1,7 @@
 import { AuthCard } from '@/components/auth/auth-card'
 import { AuthFooter } from '@/components/auth/auth-footer'
-import { SignInForm } from '@/components/auth/sign-in-form'
 import { SocialAuth } from '@/components/auth/social-auth'
+import { SignInForm } from '@/components/forms/sign-in-form'
 
 export default function SignInPage() {
   return (

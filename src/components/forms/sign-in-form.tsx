@@ -5,17 +5,14 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
-import { z } from 'zod'
+import type { z } from 'zod'
 
 import { Button } from '@/components/shadcn/button'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/shadcn/form'
 import { Input } from '@/components/shadcn/input'
 import { signIn } from '@/lib/auth/client'
 
-const signInSchema = z.object({
-  email: z.string().min(1, 'Email is required').email('Must be a valid email'),
-  password: z.string().min(1, 'Password is required'),
-})
+import { signInSchema } from './schema'
 
 export function SignInForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)

@@ -6,23 +6,14 @@ import { useQueryState } from 'nuqs'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
-import z from 'zod'
+import type z from 'zod'
 
 import { Button } from '@/components/shadcn/button'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/shadcn/form'
 import { Input } from '@/components/shadcn/input'
 import { resetPassword } from '@/lib/auth/client'
 
-const resetPasswordSchema = z.object({
-  password: z.string()
-    .min(1, 'Password is a required field')
-    .min(8, 'Password must be at least 8 characters')
-    .max(72, 'Password cannot exceed 72 characters')
-    .regex(/[A-Z]/, 'Password must contain at least 1 uppercase letter')
-    .regex(/[a-z]/, 'Password must contain at least 1 lowercase letter')
-    .regex(/\d/, 'Password must contain at least 1 number')
-    .regex(/[^\w\s]/, 'Password must contain at least 1 symbol'),
-})
+import { resetPasswordSchema } from './schema'
 
 export function ResetPasswordForm() {
   const router = useRouter()

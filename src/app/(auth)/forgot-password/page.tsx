@@ -1,6 +1,6 @@
 import { AuthCard } from '@/components/auth/auth-card'
 import { AuthFooter } from '@/components/auth/auth-footer'
-import { ForgotPasswordForm } from '@/components/auth/forgot-password-form'
+import { ForgotPasswordForm } from '@/components/forms/forgot-password-form'
 
 export default function ForgotPasswordPage() {
   return (

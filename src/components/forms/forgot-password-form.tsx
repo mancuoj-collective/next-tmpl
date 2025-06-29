@@ -5,16 +5,14 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
-import z from 'zod'
+import type z from 'zod'
 
 import { Button } from '@/components/shadcn/button'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/shadcn/form'
 import { Input } from '@/components/shadcn/input'
 import { requestPasswordReset } from '@/lib/auth/client'
 
-const forgotPasswordSchema = z.object({
-  email: z.string().min(1, 'Email is required').email('Must be a valid email'),
-})
+import { forgotPasswordSchema } from './schema'
 
 export function ForgotPasswordForm() {
   const router = useRouter()

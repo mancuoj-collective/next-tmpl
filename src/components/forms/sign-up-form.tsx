@@ -5,7 +5,7 @@ import { CheckCircleIcon } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
-import { z } from 'zod'
+import type { z } from 'zod'
 
 import { Alert, AlertDescription, AlertTitle } from '@/components/shadcn/alert'
 import { Button } from '@/components/shadcn/button'
@@ -14,17 +14,7 @@ import { Input } from '@/components/shadcn/input'
 import { signUp } from '@/lib/auth/client'
 import { cn } from '@/lib/cn'
 
-const signUpSchema = z.object({
-  email: z.string().min(1, 'Email is a required field').email('Email must be a valid email'),
-  password: z.string()
-    .min(1, 'Password is a required field')
-    .min(8, 'Password must be at least 8 characters')
-    .max(72, 'Password cannot exceed 72 characters')
-    .regex(/[A-Z]/, 'Password must contain at least 1 uppercase letter')
-    .regex(/[a-z]/, 'Password must contain at least 1 lowercase letter')
-    .regex(/\d/, 'Password must contain at least 1 number')
-    .regex(/[^\w\s]/, 'Password must contain at least 1 symbol'),
-})
+import { signUpSchema } from './schema'
 
 export function SignUpForm() {
   const [showPassword, setShowPassword] = useState(false)
