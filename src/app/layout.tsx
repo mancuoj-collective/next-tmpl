@@ -54,7 +54,9 @@ export default function RootLayout({
         )}
       >
         <RootProvider>
-          {children}
+          <div className="flex h-svh flex-col items-center justify-center">
+            {children}
+          </div>
         </RootProvider>
       </body>
     </html>
