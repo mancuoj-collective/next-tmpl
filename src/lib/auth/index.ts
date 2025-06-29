@@ -1,7 +1,6 @@
 import { betterAuth } from 'better-auth'
 import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 import { nextCookies } from 'better-auth/next-js'
-import { redirect } from 'next/navigation'
 
 import { env } from '@/config/env'
 import { db } from '@/lib/db'
@@ -43,7 +42,6 @@ export const auth = betterAuth({
         html: `<a href="${url}">Confirm your email address</a>`,
       })
     },
-    onEmailVerification: () => redirect('/dashboard'),
   },
   socialProviders: {
     github: {

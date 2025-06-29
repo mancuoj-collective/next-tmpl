@@ -127,13 +127,16 @@ export function SignUpForm() {
                 )}
                 <button
                   type="button"
-                  className="absolute top-1/2 right-2 z-50 inline-flex -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-input px-2 py-1"
+                  className="absolute top-1/2 right-2 z-5 inline-flex -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-input px-2 py-1"
                   onClick={() => setShowPassword(v => !v)}
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                  aria-pressed={showPassword}
+                  aria-controls="password"
                 >
                   {
                     showPassword
-                      ? <span className="iconify size-4 tabler--eye" />
-                      : <span className="iconify size-4 tabler--eye-off" />
+                      ? <span className="iconify size-4 tabler--eye" aria-hidden="true" />
+                      : <span className="iconify size-4 tabler--eye-off" aria-hidden="true" />
                   }
                 </button>
               </div>
