@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { toast } from 'sonner'
 
 import { Button } from '@/components/shadcn/button'
 import { signIn } from '@/lib/auth/client'
@@ -18,6 +19,10 @@ export function Github() {
           {
             onRequest: () => {
               setIsLoading(true)
+            },
+            onError: (ctx) => {
+              toast.error(ctx.error.message || 'Unknown error.')
+              setIsLoading(false)
             },
           },
         )
