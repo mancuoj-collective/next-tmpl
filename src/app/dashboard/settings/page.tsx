@@ -14,7 +14,7 @@ export default async function SettingsPage() {
       <h1 className="text-2xl mb-4 md:mb-8">Settings</h1>
       <ProfileInformation user={session.user} />
       <AccountIdentities user={session.user} />
-      <DangerZone />
+      <DangerZone user={session.user} />
     </div>
   )
 }

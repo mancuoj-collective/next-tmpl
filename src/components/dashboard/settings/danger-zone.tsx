@@ -1,8 +1,21 @@
+'use client'
+
+import type { User } from 'better-auth'
+import { useState } from 'react'
+import { toast } from 'sonner'
+
 import { SettingsCard } from '@/components/dashboard/settings/card'
 import { Button } from '@/components/shadcn/button'
+import { Dialog, DialogClose, DialogContent, DialogFooter, DialogTitle, DialogTrigger } from '@/components/shadcn/dialog'
+import { Input } from '@/components/shadcn/input'
+import { Separator } from '@/components/shadcn/separator'
 import { cn } from '@/lib/cn'
 
-export function DangerZone() {
+interface DangerZoneProps {
+  user: User
+}
+
+export function DangerZone({ user }: DangerZoneProps) {
   return (
     <SettingsCard title="Danger Zone">
       <div className={cn(
@@ -21,20 +34,67 @@ export function DangerZone() {
           <div className="flex flex-col gap-1">
             <p>Request for account deletion</p>
             <p className="text-muted-foreground text-xs">
-              Permanently remove your account and all of its contents from the platform. This action is not reversible, so please continue with caution.
+              Permanently remove your account and all of its contents from the platform. This action is not reversible, so please continue with caution. Make sure you have made a backup if you want to keep your data.
             </p>
           </div>
         </div>
-        <DeleteAccountButton />
+        <DeleteAccountButton user={user} />
       </div>
     </SettingsCard>
   )
 }
 
-function DeleteAccountButton() {
+function DeleteAccountButton({ user }: { user: User }) {
+  const [value, setValue] = useState('')
+
+  function handleSubmit() {
+    setValue('')
+    toast('test')
+  }
+
   return (
-    <Button variant="destructive" size="xs" className="ml-12">
-      Request to delete account
-    </Button>
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="alert" size="xs" className="ml-12">
+          Request to delete account
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="p-0">
+        <DialogTitle className="px-6 pt-4 flex gap-2 items-baseline">
+          Delete account
+          <span className="text-xs text-muted-foreground font-normal">Are you sure?</span>
+        </DialogTitle>
+        <Separator className="w-full" />
+        <p className="px-6 text-sm text-muted-foreground">
+          This action <span className="text-foreground">cannot</span> be undone. This will permanently delete the <span className="text-foreground">{user.name}'s account</span> and all of its contents from the platform.
+        </p>
+        <Separator className="w-full" />
+        <div className="px-6 flex flex-col gap-2">
+          <p className="text-sm text-muted-foreground">
+            Please type
+            {' '}
+            <span className="font-bold text-foreground">{user.email}</span>
+            {' '}
+            to confirm
+          </p>
+          <Input value={value} onChange={e => setValue(e.target.value)} className="w-full h-8 size-sm" />
+        </div>
+        <Separator className="w-full" />
+        <DialogFooter className="px-6 pb-4">
+          <DialogClose asChild>
+            <Button
+              type="submit"
+              variant="alert"
+              size="sm"
+              className="w-full"
+              disabled={value !== user.email}
+              onClick={handleSubmit}
+            >
+              Submit request for account deletion
+            </Button>
+          </DialogClose>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   )
 }
