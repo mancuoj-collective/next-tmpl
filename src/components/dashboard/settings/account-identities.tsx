@@ -2,23 +2,22 @@ import type { User } from 'better-auth'
 
 import { SettingsCard } from '@/components/dashboard/settings/card'
 import { Button } from '@/components/shadcn/button'
-import { getProviderId, getSession } from '@/lib/auth/utils'
+import { getProviderId } from '@/lib/auth/utils'
 
-export async function AccountIdentities() {
-  const session = await getSession()
-  if (!session?.user.id) {
-    return null
-  }
+interface AccountIdentitiesProps {
+  user: User
+}
 
-  const providerId = await getProviderId(session.user.id)
+export async function AccountIdentities({ user }: AccountIdentitiesProps) {
+  const providerId = await getProviderId(user.id)
   if (!providerId) {
     return null
   }
 
   return (
     <SettingsCard title="Account Identities">
-      {providerId === 'credential' && <EmailIdentity user={session.user} />}
-      {providerId === 'github' && <GithubIdentity user={session.user} />}
+      {providerId === 'credential' && <EmailIdentity user={user} />}
+      {providerId === 'github' && <GithubIdentity user={user} />}
     </SettingsCard>
   )
 }
