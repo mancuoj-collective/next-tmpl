@@ -10,6 +10,7 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarHeader,
+  useSidebar,
 } from '@/components/shadcn/sidebar'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/shadcn/tooltip'
 import { useIsMobile } from '@/hooks/use-mobile'
@@ -92,6 +93,8 @@ function SidebarNavItem({ item, isActive }: { item: NavItem, isActive: boolean }
 }
 
 function SidebarNavItemMobile({ item, isActive }: { item: NavItem, isActive: boolean }) {
+  const { toggleSidebar } = useSidebar()
+
   return (
     <SidebarGroupContent key={item.title} className="px-3 flex items-center justify-center">
       <Link
@@ -100,6 +103,7 @@ function SidebarNavItemMobile({ item, isActive }: { item: NavItem, isActive: boo
           'flex items-center gap-1.5 p-2 hover:bg-accent w-full',
           isActive && 'bg-accent',
         )}
+        onClick={toggleSidebar}
       >
         <span className={`size-4 iconify ${item.icon}`} />
         <span className="text-sm">{item.title}</span>
