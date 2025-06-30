@@ -1,5 +1,5 @@
-import { AccountIdentities } from '@/components/dashboard/account-identities'
-import { DangerZone } from '@/components/dashboard/danger-zone'
+import { AccountIdentities } from '@/components/dashboard/settings/account-identities'
+import { DangerZone } from '@/components/dashboard/settings/danger-zone'
 
 export default function SettingsPage() {
   return (

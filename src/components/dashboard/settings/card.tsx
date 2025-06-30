@@ -1,12 +1,11 @@
 import type { ReactNode } from 'react'
 
-interface SettingCardProps {
+interface SettingsCardProps {
   title: string
-  description?: string
   children: ReactNode
 }
 
-export function SettingCard({ title, description, children }: SettingCardProps) {
+export function SettingsCard({ title, children }: SettingsCardProps) {
   return (
     <div className="mb-4 md:mb-8 rounded-md border shadow-xs overflow-hidden bg-sidebar">
       <div className="border-b flex items-center p-4 md:px-6">
@@ -15,11 +14,6 @@ export function SettingCard({ title, description, children }: SettingCardProps) 
       <div className="p-4 md:px-6">
         {children}
       </div>
-      {description && (
-        <div className="p-4 md:px-6 text-sm text-muted-foreground border-t">
-          {description}
-        </div>
-      )}
     </div>
   )
 }

@@ -1,9 +1,8 @@
 import type { User } from 'better-auth'
 
+import { SettingsCard } from '@/components/dashboard/settings/card'
+import { Button } from '@/components/shadcn/button'
 import { getProviderId, getSession } from '@/lib/auth/utils'
-
-import { Button } from '../shadcn/button'
-import { SettingCard } from './setting-card'
 
 export async function AccountIdentities() {
   const session = await getSession()
@@ -17,10 +16,10 @@ export async function AccountIdentities() {
   }
 
   return (
-    <SettingCard title="Account Identities">
+    <SettingsCard title="Account Identities">
       {providerId === 'credential' && <EmailIdentity user={session.user} />}
       {providerId === 'github' && <GithubIdentity user={session.user} />}
-    </SettingCard>
+    </SettingsCard>
   )
 }
 

@@ -1,7 +1,7 @@
 'use client'
 
-import { UserMenu } from '@/components/auth/user-menu'
-import { AppSidebar } from '@/components/dashboard/app-sidebar'
+import { DashboardSidebar } from '@/components/dashboard/sidebar'
+import { UserMenu } from '@/components/dashboard/user-menu'
 import { Button } from '@/components/shadcn/button'
 import { SidebarProvider, SidebarTrigger } from '@/components/shadcn/sidebar'
 import { siteConfig } from '@/config/site'
@@ -13,7 +13,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   return (
     <SidebarProvider>
-      <AppSidebar />
+      <DashboardSidebar />
       <main className="flex-1 flex flex-col">
         <header className={cn(
           'flex h-16 items-center justify-end px-4 border-b static',

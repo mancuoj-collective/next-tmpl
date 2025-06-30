@@ -1,6 +1,6 @@
-import { AuthCard } from '@/components/auth/auth-card'
-import { AuthFooter } from '@/components/auth/auth-footer'
-import { ResetPasswordForm } from '@/components/forms/reset-password-form'
+import { AuthCard } from '@/components/auth/card'
+import { AuthFooter } from '@/components/auth/footer'
+import { ResetPasswordForm } from '@/components/auth/forms/reset-password'
 
 export default function ResetPasswordPage() {
   return (

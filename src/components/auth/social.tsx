@@ -3,7 +3,7 @@
 import { Github } from '@/components/auth/github'
 import { Separator } from '@/components/shadcn/separator'
 
-export function SocialAuth() {
+export function AuthSocial() {
   return (
     <>
       <Github />

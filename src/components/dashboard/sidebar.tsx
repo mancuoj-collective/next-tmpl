@@ -34,7 +34,7 @@ const navItems: NavItem[] = [
   },
 ]
 
-export function AppSidebar() {
+export function DashboardSidebar() {
   const pathname = usePathname()
   const isMobile = useIsMobile()
 

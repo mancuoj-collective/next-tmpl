@@ -1,11 +1,10 @@
+import { SettingsCard } from '@/components/dashboard/settings/card'
+import { Button } from '@/components/shadcn/button'
 import { cn } from '@/lib/cn'
-
-import { Button } from '../shadcn/button'
-import { SettingCard } from './setting-card'
 
 export function DangerZone() {
   return (
-    <SettingCard title="Danger Zone">
+    <SettingsCard title="Danger Zone">
       <div className={cn(
         'w-full rounded-lg p-4 text-sm space-y-4',
         'bg-destructive/3 dark:bg-destructive/8 border border-destructive/20 dark:border-destructive/40',
@@ -28,7 +27,7 @@ export function DangerZone() {
         </div>
         <DeleteAccountButton />
       </div>
-    </SettingCard>
+    </SettingsCard>
   )
 }
 
