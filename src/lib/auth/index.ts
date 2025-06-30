@@ -49,5 +49,19 @@ export const auth = betterAuth({
       clientSecret: env.GITHUB_CLIENT_SECRET,
     },
   },
+  user: {
+    deleteUser: {
+      enabled: true,
+      sendDeleteAccountVerification: async ({ user, url }) => {
+        await resend.emails.send({
+          from: env.RESEND_EMAIL_FROM,
+          to: user.email,
+          subject: 'Verify your account deletion',
+          // TODO: react email template
+          html: `<a href="${url}">Click to verify your account deletion</a>`,
+        })
+      },
+    },
+  },
   plugins: [nextCookies()],
 })

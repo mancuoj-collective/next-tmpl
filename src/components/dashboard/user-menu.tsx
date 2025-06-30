@@ -20,18 +20,18 @@ import { signOut, useSession } from '@/lib/auth/client'
 
 export function UserMenu() {
   const router = useRouter()
-  const { data, isPending } = useSession()
+  const { data: session, isPending } = useSession()
   const { theme, setTheme } = useTheme()
 
   if (isPending) {
     return <Skeleton className="size-8 rounded-full" />
   }
 
-  if (!data || !data.user) {
+  if (!session) {
     return null
   }
 
-  const { user } = data
+  const { user } = session
   const isRegisteredByEmail = user.name === user.email
 
   return (
