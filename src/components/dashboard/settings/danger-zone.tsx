@@ -7,8 +7,10 @@ import { toast } from 'sonner'
 import { SettingsCard } from '@/components/dashboard/settings/card'
 import { Button } from '@/components/shadcn/button'
 import { Dialog, DialogClose, DialogContent, DialogFooter, DialogTitle, DialogTrigger } from '@/components/shadcn/dialog'
+import { Drawer, DrawerClose, DrawerContent, DrawerFooter, DrawerTitle, DrawerTrigger } from '@/components/shadcn/drawer'
 import { Input } from '@/components/shadcn/input'
 import { Separator } from '@/components/shadcn/separator'
+import { useIsMobile } from '@/hooks/use-mobile'
 import { cn } from '@/lib/cn'
 
 interface DangerZoneProps {
@@ -45,11 +47,60 @@ export function DangerZone({ user }: DangerZoneProps) {
 }
 
 function DeleteAccountButton({ user }: { user: User }) {
+  const isMobile = useIsMobile()
   const [value, setValue] = useState('')
 
   function handleSubmit() {
     setValue('')
     toast('test')
+  }
+
+  if (isMobile) {
+    return (
+      <Drawer>
+        <DrawerTrigger asChild>
+          <Button variant="alert" size="xs" className="ml-12">
+            Request to delete account
+          </Button>
+        </DrawerTrigger>
+        <DrawerContent className="flex flex-col gap-4 p-0">
+          <DrawerTitle className="px-6 pt-4 flex gap-2 items-baseline">
+            Delete account
+            <span className="text-xs text-muted-foreground font-normal">Are you sure?</span>
+          </DrawerTitle>
+          <Separator className="w-full" />
+          <p className="px-6 text-sm text-muted-foreground">
+            This action <span className="text-foreground">cannot</span> be undone. This will permanently delete the <span className="text-foreground">{user.name}'s account</span> and all of its contents from the platform.
+          </p>
+          <Separator className="w-full" />
+          <div className="px-6 flex flex-col gap-2">
+            <p className="text-sm text-muted-foreground">
+              Please type
+              {' '}
+              <span className="font-bold text-foreground">{user.email}</span>
+              {' '}
+              to confirm
+            </p>
+            <Input value={value} onChange={e => setValue(e.target.value)} className="w-full h-8 size-sm" />
+          </div>
+          <Separator className="w-full" />
+          <DrawerFooter className="px-6 pt-0 pb-6">
+            <DrawerClose asChild>
+              <Button
+                type="submit"
+                variant="alert"
+                size="sm"
+                className="w-full"
+                disabled={value !== user.email}
+                onClick={handleSubmit}
+              >
+                Submit request for account deletion
+              </Button>
+            </DrawerClose>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    )
   }
 
   return (
