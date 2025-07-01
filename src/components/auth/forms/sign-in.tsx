@@ -80,7 +80,7 @@ export function SignInForm() {
             <FormItem>
               <div className="flex items-center justify-between">
                 <FormLabel className="text-muted-foreground">Password</FormLabel>
-                <Link href="/forgot-password" className="text-sm text-muted-foreground/70 tracking-tight leading-none font-medium select-none">
+                <Link href="/forgot-password" tabIndex={-1} className="text-sm text-muted-foreground/75 tracking-tight leading-none font-medium select-none">
                   Forgot Password?
                 </Link>
               </div>

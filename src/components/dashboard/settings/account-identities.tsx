@@ -16,8 +16,10 @@ export async function AccountIdentities({ user }: AccountIdentitiesProps) {
 
   return (
     <SettingsCard title="Account Identities">
-      {providerId === 'credential' && <EmailIdentity user={user} />}
-      {providerId === 'github' && <GithubIdentity user={user} />}
+      <div className="p-4 md:px-6">
+        {providerId === 'credential' && <EmailIdentity user={user} />}
+        {providerId === 'github' && <GithubIdentity user={user} />}
+      </div>
     </SettingsCard>
   )
 }

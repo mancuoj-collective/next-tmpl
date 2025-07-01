@@ -11,9 +11,7 @@ export function SettingsCard({ title, children }: SettingsCardProps) {
       <div className="border-b flex items-center p-4 md:px-6">
         {title}
       </div>
-      <div className="p-4 md:px-6">
-        {children}
-      </div>
+      {children}
     </div>
   )
 }
