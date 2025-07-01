@@ -53,7 +53,7 @@ export function DangerZone({ user }: DangerZoneProps) {
             <div className="flex flex-col gap-1">
               <p>Request for account deletion</p>
               <p className="text-muted-foreground text-xs">
-                Permanently remove your account and all of its contents from the platform. This action is not reversible, so please continue with caution. Make sure you have made a backup if you want to keep your data.
+                Permanently remove your account and all of its contents from the platform. Make sure you have made a backup if you want to keep your data. This action is not reversible, so please continue with caution.
               </p>
             </div>
           </div>
@@ -77,7 +77,7 @@ function DeleteAccountButton({ user }: { user: User }) {
     return (
       <Drawer>
         <DrawerTrigger asChild>
-          <Button variant="alert" size="xs" className="ml-12">
+          <Button variant="alert" size="xs" className="ml-11">
             Request to delete account
           </Button>
         </DrawerTrigger>
@@ -99,14 +99,14 @@ function DeleteAccountButton({ user }: { user: User }) {
               {' '}
               to confirm
             </p>
-            <Input value={value} onChange={e => setValue(e.target.value)} className="w-full h-8 size-sm" />
+            <Input value={value} onChange={e => setValue(e.target.value)} className="h-8" />
           </div>
           <Separator className="w-full" />
           <DrawerFooter className="px-6 pt-0 pb-6">
             <DrawerClose asChild>
               <Button
                 type="submit"
-                variant="alert"
+                variant="destructive"
                 size="sm"
                 className="w-full"
                 disabled={value !== user.email}
@@ -124,7 +124,7 @@ function DeleteAccountButton({ user }: { user: User }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="alert" size="xs" className="ml-12">
+        <Button variant="alert" size="xs" className="ml-11">
           Request to delete account
         </Button>
       </DialogTrigger>
@@ -146,14 +146,14 @@ function DeleteAccountButton({ user }: { user: User }) {
             {' '}
             to confirm
           </p>
-          <Input value={value} onChange={e => setValue(e.target.value)} className="w-full h-8 size-sm" />
+          <Input value={value} onChange={e => setValue(e.target.value)} className="h-8" />
         </div>
         <Separator className="w-full" />
         <DialogFooter className="px-6 pb-4">
           <DialogClose asChild>
             <Button
               type="submit"
-              variant="alert"
+              variant="destructive"
               size="sm"
               className="w-full"
               disabled={value !== user.email}
