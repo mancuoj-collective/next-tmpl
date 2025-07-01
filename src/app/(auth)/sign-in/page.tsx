@@ -1,6 +1,6 @@
 import { AuthCard } from '@/components/auth/card'
 import { AuthFooter } from '@/components/auth/footer'
-import { SignInForm } from '@/components/auth/forms/sign-in'
+import { SignInForm } from '@/components/auth/form/sign-in'
 import { AuthSocial } from '@/components/auth/social'
 
 export default function SignInPage() {

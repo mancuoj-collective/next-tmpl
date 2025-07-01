@@ -8,12 +8,12 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import type z from 'zod'
 
-import { Button } from '@/components/shadcn/button'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/shadcn/form'
-import { Input } from '@/components/shadcn/input'
+import { Form } from '@/components/shadcn/form'
 import { resetPassword } from '@/lib/auth/client'
 
+import { FormPasswordInput } from './password-input'
 import { resetPasswordSchema } from './schema'
+import { FormSubmitButton } from './submit-button'
 
 export function ResetPasswordForm() {
   const router = useRouter()
@@ -60,38 +60,15 @@ export function ResetPasswordForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6 text-sm">
-        <FormField
-          control={form.control}
+        <FormPasswordInput
+          form={form}
           name="password"
-          render={({ field, fieldState }) => (
-            <FormItem>
-              <FormLabel className="text-muted-foreground">Password</FormLabel>
-              <div className="relative">
-                <FormControl>
-                  <Input
-                    type="password"
-                    placeholder="••••••••"
-                    {...field}
-                  />
-                </FormControl>
-                {fieldState.invalid && (
-                  <span className="absolute top-1/2 right-2 iconify size-5 -translate-y-1/2 text-destructive tabler--alert-circle" />
-                )}
-              </div>
-              <FormMessage />
-            </FormItem>
-          )}
+          placeholder="••••••••"
+          showToggleButton={false}
         />
-        <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? (
-            <>
-              <span className="iconify size-4 animate-spin tabler--loader-2" />
-              <span>Saving...</span>
-            </>
-          ) : (
-            <span>Save New Password</span>
-          )}
-        </Button>
+        <FormSubmitButton isSubmitting={isSubmitting} submittingText="Saving...">
+          Save New Password
+        </FormSubmitButton>
       </form>
     </Form>
   )

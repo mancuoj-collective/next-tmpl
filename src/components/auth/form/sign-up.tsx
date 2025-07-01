@@ -8,16 +8,16 @@ import { toast } from 'sonner'
 import type { z } from 'zod'
 
 import { Alert, AlertDescription, AlertTitle } from '@/components/shadcn/alert'
-import { Button } from '@/components/shadcn/button'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/shadcn/form'
-import { Input } from '@/components/shadcn/input'
+import { Form } from '@/components/shadcn/form'
 import { signUp } from '@/lib/auth/client'
 import { cn } from '@/lib/cn'
 
+import { FormInput } from './input'
+import { FormPasswordInput } from './password-input'
 import { signUpSchema } from './schema'
+import { FormSubmitButton } from './submit-button'
 
 export function SignUpForm() {
-  const [showPassword, setShowPassword] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [showPasswordRequirements, setShowPasswordRequirements] = useState(false)
@@ -79,61 +79,21 @@ export function SignUpForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4 text-sm">
-        <FormField
-          control={form.control}
+        <FormInput
+          form={form}
           name="email"
-          render={({ field, fieldState }) => (
-            <FormItem>
-              <FormLabel className="text-muted-foreground">Email</FormLabel>
-              <div className="relative">
-                <FormControl>
-                  <Input placeholder="you@example.com" {...field} />
-                </FormControl>
-                {fieldState.invalid && (
-                  <span className="absolute top-1/2 right-2 iconify size-5 -translate-y-1/2 text-destructive tabler--alert-circle" />
-                )}
-              </div>
-              <FormMessage />
-            </FormItem>
-          )}
+          label="Email"
+          placeholder="you@example.com"
         />
-        <FormField
-          control={form.control}
+
+        <FormPasswordInput
+          form={form}
           name="password"
-          render={({ field, fieldState }) => (
-            <FormItem>
-              <FormLabel className="text-muted-foreground">Password</FormLabel>
-              <div className="relative">
-                <FormControl>
-                  <Input
-                    type={showPassword ? 'text' : 'password'}
-                    placeholder="••••••••"
-                    {...field}
-                    onFocus={() => setShowPasswordRequirements(true)}
-                  />
-                </FormControl>
-                {fieldState.invalid && (
-                  <span className="absolute top-1/2 right-12 iconify size-5 -translate-y-1/2 text-destructive tabler--alert-circle" />
-                )}
-                <button
-                  type="button"
-                  className="absolute top-1/2 right-2 z-5 inline-flex -translate-y-1/2 cursor-pointer items-center justify-center rounded border border-input px-2 py-1"
-                  onClick={() => setShowPassword(v => !v)}
-                  aria-label={showPassword ? 'Hide password' : 'Show password'}
-                  aria-pressed={showPassword}
-                  aria-controls="password"
-                >
-                  {
-                    showPassword
-                      ? <span className="iconify size-4 tabler--eye" aria-hidden="true" />
-                      : <span className="iconify size-4 tabler--eye-off" aria-hidden="true" />
-                  }
-                </button>
-              </div>
-              <FormMessage />
-            </FormItem>
-          )}
+          label="Password"
+          placeholder="••••••••"
+          onFocus={() => setShowPasswordRequirements(true)}
         />
+
         {showPasswordRequirements && (
           <div className={cn(
             'animate-in duration-500 fade-in slide-in-from-top-3',
@@ -152,10 +112,10 @@ export function SignUpForm() {
             ))}
           </div>
         )}
-        <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting && <span className="iconify size-4 animate-spin tabler--loader-2" />}
-          <span>Sign Up</span>
-        </Button>
+
+        <FormSubmitButton isSubmitting={isSubmitting} submittingText="Sign Up">
+          Sign Up
+        </FormSubmitButton>
       </form>
     </Form>
   )

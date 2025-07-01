@@ -7,12 +7,12 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import type z from 'zod'
 
-import { Button } from '@/components/shadcn/button'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/shadcn/form'
-import { Input } from '@/components/shadcn/input'
+import { Form } from '@/components/shadcn/form'
 import { requestPasswordReset } from '@/lib/auth/client'
 
+import { FormInput } from './input'
 import { forgotPasswordSchema } from './schema'
+import { FormSubmitButton } from './submit-button'
 
 export function ForgotPasswordForm() {
   const router = useRouter()
@@ -54,34 +54,15 @@ export function ForgotPasswordForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6 text-sm">
-        <FormField
-          control={form.control}
+        <FormInput
+          form={form}
           name="email"
-          render={({ field, fieldState }) => (
-            <FormItem>
-              <FormLabel className="text-muted-foreground">Email</FormLabel>
-              <div className="relative">
-                <FormControl>
-                  <Input placeholder="you@example.com" {...field} />
-                </FormControl>
-                {fieldState.invalid && (
-                  <span className="absolute top-1/2 right-2 iconify size-5 -translate-y-1/2 text-destructive tabler--alert-circle" />
-                )}
-              </div>
-              <FormMessage />
-            </FormItem>
-          )}
+          label="Email"
+          placeholder="you@example.com"
         />
-        <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? (
-            <>
-              <span className="iconify size-4 animate-spin tabler--loader-2" />
-              <span>Sending...</span>
-            </>
-          ) : (
-            <span>Send Reset Email</span>
-          )}
-        </Button>
+        <FormSubmitButton isSubmitting={isSubmitting} submittingText="Sending...">
+          Send Reset Email
+        </FormSubmitButton>
       </form>
     </Form>
   )
