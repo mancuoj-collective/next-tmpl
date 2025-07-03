@@ -40,7 +40,7 @@ export function FormPasswordInput({
           <div className="flex items-center justify-between">
             {label && <FormLabel className="text-muted-foreground">{label}</FormLabel>}
             {forgotPasswordLink && (
-              <Link href={forgotPasswordLink} tabIndex={-1} className="text-sm text-muted-foreground/75 tracking-tight leading-none font-medium select-none">
+              <Link href={forgotPasswordLink} tabIndex={-1} className="text-sm text-muted-foreground/75 tracking-tight leading-none select-none">
                 Forgot Password?
               </Link>
             )}

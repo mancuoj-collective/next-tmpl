@@ -25,7 +25,7 @@ export function ActiveSessions({ currentSessionId, activeSessions }: ActiveSessi
   })
 
   return (
-    <SettingsCard title="Active sessions">
+    <SettingsCard title="Active Sessions">
       {sortedSessions.map(session => (
         <SessionItem
           key={session.id}
@@ -55,8 +55,8 @@ function SessionItem({ session, isCurrent }: { session: Session, isCurrent: bool
               : 'carbon--laptop',
         )}
         />
-        <div className="flex flex-col gap-1.5">
-          <p className="text-sm font-medium">
+        <div className="flex flex-col gap-1">
+          <p className="text-sm">
             {os.name}
             {' '}
             {os.version}

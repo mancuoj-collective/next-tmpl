@@ -45,11 +45,11 @@ export function UserMenu() {
       <DropdownMenuContent className="w-54" align="end" sideOffset={8}>
         <DropdownMenuLabel>
           {isRegisteredByEmail ? (
-            <p className="text-xs text-foreground">{user.name}</p>
+            <p className="font-medium text-xs text-foreground">{user.name}</p>
           ) : (
             <>
-              <p className="text-sm font-medium text-foreground">{user.name}</p>
-              <p className="mt-1 text-xs text-muted-foreground/80">{user.email}</p>
+              <p className="font-medium text-sm text-foreground">{user.name}</p>
+              <p className="mt-1 text-xs text-muted-foreground">{user.email}</p>
             </>
           )}
         </DropdownMenuLabel>

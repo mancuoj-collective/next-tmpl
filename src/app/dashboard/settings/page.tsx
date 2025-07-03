@@ -16,7 +16,7 @@ export default async function SettingsPage() {
 
   return (
     <div className="flex flex-col p-6 lg:p-8 xl:p-10">
-      <h1 className="text-2xl mb-4 md:mb-8">Settings</h1>
+      <h1 className="text-2xl font-medium mb-6 md:mb-8">Settings</h1>
       <ProfileInformation user={session.user} />
       <AccountIdentities user={session.user} />
       <ActiveSessions currentSessionId={session.session.id} activeSessions={activeSessions} />

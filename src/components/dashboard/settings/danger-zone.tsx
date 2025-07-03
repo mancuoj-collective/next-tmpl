@@ -117,7 +117,7 @@ function DeleteAccountButton({ user }: { user: User }) {
             {' '}
             to confirm
           </p>
-          <Input value={value} onChange={e => setValue(e.target.value)} className="h-8" />
+          <Input value={value} onChange={e => setValue(e.target.value)} className="h-8 text-xs" />
         </div>
         <Separator className="w-full" />
         <Footer className="px-6 pb-4">
