@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
+import { redirect, useRouter } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import { toast } from 'sonner'
 
@@ -28,7 +28,7 @@ export function UserMenu() {
   }
 
   if (!session) {
-    return null
+    return redirect('/sign-in')
   }
 
   const { user } = session

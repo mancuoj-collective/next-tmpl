@@ -1,4 +1,5 @@
 import type { User } from 'better-auth'
+import { redirect } from 'next/navigation'
 
 import { SettingsCard } from '@/components/dashboard/settings/card'
 import { Button } from '@/components/shadcn/button'
@@ -11,7 +12,7 @@ interface AccountIdentitiesProps {
 export async function AccountIdentities({ user }: AccountIdentitiesProps) {
   const providerId = await getProviderId(user.id)
   if (!providerId) {
-    return null
+    return redirect('/sign-in')
   }
 
   return (
