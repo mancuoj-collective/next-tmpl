@@ -28,9 +28,11 @@ export function ProfileInformation({ user }: ProfileInformationProps) {
         setIsSubmitting(true)
       },
       onResponse: () => {
-        setLastSavedName(displayName)
-        setIsSubmitting(false)
         router.refresh()
+        setIsSubmitting(false)
+      },
+      onSuccess: () => {
+        setLastSavedName(displayName)
       },
     })
 
