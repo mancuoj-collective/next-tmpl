@@ -35,7 +35,7 @@ function EmailIdentity({ user }: { user: User }) {
         </div>
       </div>
       <Button variant="outline" size="xs">
-        Reset password
+        Change password
       </Button>
     </div>
   )

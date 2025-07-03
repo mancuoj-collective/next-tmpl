@@ -19,8 +19,7 @@ export function ProfileInformation({ user }: ProfileInformationProps) {
         />
       </div>
       <div className="flex items-center justify-end gap-2.5 p-4 md:px-6">
-        <Button variant="outline" size="xs">Cancel</Button>
-        <Button variant="default" size="xs">Save</Button>
+        <Button variant="outline" size="xs">Save</Button>
       </div>
     </SettingsCard>
   )

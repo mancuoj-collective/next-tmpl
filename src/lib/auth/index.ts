@@ -63,5 +63,10 @@ export const auth = betterAuth({
       },
     },
   },
+  account: {
+    accountLinking: {
+      enabled: false,
+    },
+  },
   plugins: [nextCookies()],
 })

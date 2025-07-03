@@ -11,6 +11,13 @@ export async function getSession() {
   return session
 }
 
+export async function listSessions() {
+  const sessions = await auth.api.listSessions({
+    headers: await headers(),
+  })
+  return sessions
+}
+
 export async function getProviderId(userId: string) {
   const ctx = await auth.$context
   const account = await ctx.internalAdapter.findAccountByUserId(userId)

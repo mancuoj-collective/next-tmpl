@@ -16,8 +16,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <DashboardSidebar />
       <main className="flex-1 flex flex-col">
         <header className={cn(
-          'flex h-16 items-center justify-end px-4 border-b static',
-          isMobile && 'justify-between sticky top-0 z-10 border-none bg-background/80 backdrop-filter backdrop-blur-xl',
+          'flex h-16 items-center justify-end px-4 border-b sticky top-0 z-10',
+          isMobile && 'justify-between border-none',
         )}
         >
           {isMobile && <SidebarTrigger />}
@@ -30,7 +30,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <UserMenu />
           </div>
         </header>
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 min-h-0 overflow-y-auto">
           {children}
         </div>
       </main>
