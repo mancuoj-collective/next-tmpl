@@ -68,7 +68,7 @@ export function ProfileInformation({ user }: ProfileInformationProps) {
           onClick={handleSubmit}
           disabled={isSubmitting || displayName === lastSavedName || displayName === ''}
         >
-          {isSubmitting && <span className="iconify tabler--loader-2 size-4 animate-spin" />}
+          {isSubmitting && <span className="iconify tabler--loader-2 animate-spin" />}
           <span>Save</span>
         </Button>
       </div>

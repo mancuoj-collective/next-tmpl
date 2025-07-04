@@ -44,7 +44,7 @@ export function ActiveSessions({ currentSessionId, activeSessions }: ActiveSessi
 function SessionItem({ session, isCurrent }: { session: Session, isCurrent: boolean }) {
   const { browser, os, device } = UAParser(session.userAgent || '')
   const updateTime = useTimeAgo(session.updatedAt)
-  const [isRevoking, setIsRevoking] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const router = useRouter()
 
   async function handleRevoke() {
@@ -52,10 +52,10 @@ function SessionItem({ session, isCurrent }: { session: Session, isCurrent: bool
       token: session.token,
     }, {
       onRequest: () => {
-        setIsRevoking(true)
+        setIsSubmitting(true)
       },
       onResponse: () => {
-        setIsRevoking(false)
+        setIsSubmitting(false)
       },
       onSuccess: () => {
         router.refresh()
@@ -92,10 +92,10 @@ function SessionItem({ session, isCurrent }: { session: Session, isCurrent: bool
         </div>
       </div>
       {!isCurrent && (
-        <Button variant="outline" size="xs" onClick={handleRevoke} disabled={isRevoking}>
+        <Button variant="outline" size="xs" onClick={handleRevoke} disabled={isSubmitting}>
           <span className={cn(
-            'iconify size-4',
-            isRevoking ? 'tabler--loader-2 animate-spin' : 'tabler--logout-2',
+            'iconify',
+            isSubmitting ? 'tabler--loader-2 animate-spin' : 'tabler--logout-2',
           )}
           />
           <span>Revoke</span>
