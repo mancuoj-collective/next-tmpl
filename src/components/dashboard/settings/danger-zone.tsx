@@ -98,7 +98,7 @@ function DeleteAccountButton({ user }: { user: User }) {
       <DialogContent className="p-0 gap-2.5 md:gap-4">
         <DialogHeader className="pt-4 gap-2.5 md:gap-4">
           <DialogTitle className="px-6 flex gap-2.5 items-baseline">
-            <span className="text-sm md:text-base tracking-wider">Delete account</span>
+            <span className="text-sm md:text-base">Delete account</span>
             <span className="text-xs text-muted-foreground font-normal">Are you sure?</span>
           </DialogTitle>
           <Separator />
