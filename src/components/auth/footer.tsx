@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-type AuthMode = 'sign-in' | 'sign-up' | 'forgot-password'
+type AuthMode = 'sign-in' | 'sign-up' | 'forgot-password' | 'change-password'
 
 interface AuthFooterProps {
   mode: AuthMode
@@ -23,6 +23,11 @@ const footerMap = {
     text: 'Already have an account?',
     link: '/sign-in',
     linkText: 'Sign In',
+  },
+  'change-password': {
+    text: 'Back to',
+    link: '/dashboard',
+    linkText: 'your dashboard',
   },
 }
 

@@ -1,5 +1,5 @@
 import type { User } from 'better-auth'
-import { redirect } from 'next/navigation'
+import Link from 'next/link'
 
 import { SettingsCard } from '@/components/dashboard/settings/card'
 import { Button } from '@/components/shadcn/button'
@@ -11,8 +11,9 @@ interface AccountIdentitiesProps {
 
 export async function AccountIdentities({ user }: AccountIdentitiesProps) {
   const providerId = await getProviderId(user.id)
+
   if (!providerId) {
-    return redirect('/sign-in')
+    return null
   }
 
   return (
@@ -35,8 +36,11 @@ function EmailIdentity({ user }: { user: User }) {
           <p className="text-muted-foreground text-xs truncate">{user.email}</p>
         </div>
       </div>
-      <Button variant="outline" size="xs">
-        Change password
+      <Button variant="outline" size="xs" asChild>
+        <Link href="/change-password">
+          <span className="iconify tabler--external-link" />
+          Change password
+        </Link>
       </Button>
     </div>
   )

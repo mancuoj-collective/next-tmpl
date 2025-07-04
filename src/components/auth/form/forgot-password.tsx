@@ -34,6 +34,7 @@ export function ForgotPasswordForm() {
         setIsSubmitting(true)
       },
       onSuccess: () => {
+        router.push('/sign-in')
         toast(
           'Reset your password',
           {
@@ -43,9 +44,9 @@ export function ForgotPasswordForm() {
             richColors: false,
           },
         )
-        router.push('/sign-in')
       },
       onError: (ctx) => {
+        setIsSubmitting(false)
         toast.error(ctx.error.message || 'Unknown error.')
       },
     })

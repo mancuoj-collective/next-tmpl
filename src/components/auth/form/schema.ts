@@ -30,3 +30,8 @@ export const resetPasswordSchema = z.object({
 export const forgotPasswordSchema = z.object({
   email: emailSchema,
 })
+
+export const changePasswordSchema = z.object({
+  currentPassword: z.string().min(1, 'Current password is required'),
+  newPassword: passwordSchema,
+})

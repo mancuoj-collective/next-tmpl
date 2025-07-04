@@ -1,5 +1,3 @@
-import { redirect } from 'next/navigation'
-
 import { AccountIdentities } from '@/components/dashboard/settings/account-identities'
 import { ActiveSessions } from '@/components/dashboard/settings/active-sessions'
 import { DangerZone } from '@/components/dashboard/settings/danger-zone'
@@ -13,7 +11,7 @@ export default async function SettingsPage() {
   ])
 
   if (!session || !activeSessions) {
-    return redirect('/sign-in')
+    return null
   }
 
   return (
