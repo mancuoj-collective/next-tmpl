@@ -45,18 +45,14 @@ function SessionItem({ session, isCurrent }: { session: Session, isCurrent: bool
 
   return (
     <div className="flex items-center justify-between gap-4 border-b last:border-b-0 p-4 md:px-6">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2.5 md:gap-4">
         <span className={cn(
           'iconify size-7 md:size-8 text-muted-foreground',
-          device.type === 'mobile'
-            ? 'carbon--mobile'
-            : device.type === 'tablet'
-              ? 'carbon--tablet'
-              : 'carbon--laptop',
+          device.type === 'mobile' ? 'carbon--mobile' : 'carbon--laptop',
         )}
         />
         <div className="flex flex-col gap-1">
-          <p className="text-sm">
+          <p className="text-xs md:text-sm">
             {os.name}
             {' '}
             {os.version}

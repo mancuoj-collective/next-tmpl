@@ -28,10 +28,10 @@ export async function AccountIdentities({ user }: AccountIdentitiesProps) {
 function EmailIdentity({ user }: { user: User }) {
   return (
     <div className="flex items-center justify-between">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2.5 md:gap-4">
         <span className="iconify carbon--email size-7 md:size-8 text-muted-foreground" />
         <div className="flex flex-col gap-1">
-          <p className="text-sm">Email</p>
+          <p className="text-xs md:text-sm">Email</p>
           <p className="text-muted-foreground text-xs truncate">{user.email}</p>
         </div>
       </div>
@@ -45,10 +45,10 @@ function EmailIdentity({ user }: { user: User }) {
 function GithubIdentity({ user }: { user: User }) {
   return (
     <div className="flex items-center justify-between">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2.5 md:gap-4">
         <span className="iconify carbon--logo-github size-7 md:size-8 text-muted-foreground" />
         <div className="flex flex-col gap-1">
-          <p className="text-sm">GitHub</p>
+          <p className="text-xs md:text-sm">GitHub</p>
           <p className="text-muted-foreground text-xs truncate">{user.name} • {user.email}</p>
         </div>
       </div>
