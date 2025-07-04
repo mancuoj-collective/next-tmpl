@@ -2,10 +2,14 @@
 
 import { useTimeAgo } from '@shined/react-use'
 import type { Session } from 'better-auth'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+import { toast } from 'sonner'
 import { UAParser } from 'ua-parser-js'
 
 import { Badge } from '@/components/shadcn/badge'
 import { Button } from '@/components/shadcn/button'
+import { revokeSession } from '@/lib/auth/client'
 import { cn } from '@/lib/cn'
 
 import { SettingsCard } from './card'
@@ -40,8 +44,28 @@ export function ActiveSessions({ currentSessionId, activeSessions }: ActiveSessi
 function SessionItem({ session, isCurrent }: { session: Session, isCurrent: boolean }) {
   const { browser, os, device } = UAParser(session.userAgent || '')
   const updateTime = useTimeAgo(session.updatedAt)
+  const [isRevoking, setIsRevoking] = useState(false)
+  const router = useRouter()
 
-  function handleRevoke() {}
+  async function handleRevoke() {
+    await revokeSession({
+      token: session.token,
+    }, {
+      onRequest: () => {
+        setIsRevoking(true)
+      },
+      onResponse: () => {
+        setIsRevoking(false)
+      },
+      onSuccess: () => {
+        router.refresh()
+        toast.success('Session revoked successfully!')
+      },
+      onError: (ctx) => {
+        toast.error(ctx.error.message || 'Unknown error.')
+      },
+    })
+  }
 
   return (
     <div className="flex items-center justify-between gap-4 border-b last:border-b-0 p-4 md:px-6">
@@ -68,9 +92,13 @@ function SessionItem({ session, isCurrent }: { session: Session, isCurrent: bool
         </div>
       </div>
       {!isCurrent && (
-        <Button variant="outline" size="xs" onClick={handleRevoke}>
-          <span className="iconify tabler--logout-2" />
-          Revoke
+        <Button variant="outline" size="xs" onClick={handleRevoke} disabled={isRevoking}>
+          <span className={cn(
+            'iconify size-4',
+            isRevoking ? 'tabler--loader-2 animate-spin' : 'tabler--logout-2',
+          )}
+          />
+          <span>Revoke</span>
         </Button>
       )}
     </div>
