@@ -43,6 +43,11 @@ export function ChangePasswordForm() {
   }
 
   async function onSubmit(values: z.infer<typeof changePasswordSchema>) {
+    if (values.newPassword === values.currentPassword) {
+      toast.error('New password cannot be the same as the current password.')
+      return
+    }
+
     await changePassword({
       currentPassword: values.currentPassword,
       newPassword: values.newPassword,
