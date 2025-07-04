@@ -10,6 +10,8 @@ import { Button } from '@/components/shadcn/button'
 import { Input } from '@/components/shadcn/input'
 import { updateUser } from '@/lib/auth/client'
 
+import { AvatarCropper } from './avatar-cropper'
+
 interface ProfileInformationProps {
   user: User
 }
@@ -21,30 +23,29 @@ export function ProfileInformation({ user }: ProfileInformationProps) {
   const router = useRouter()
 
   async function handleSubmit() {
-    const promise = updateUser({
+    await updateUser({
       name: displayName,
     }, {
       onRequest: () => {
         setIsSubmitting(true)
       },
       onResponse: () => {
-        router.refresh()
         setIsSubmitting(false)
       },
       onSuccess: () => {
         setLastSavedName(displayName)
+        router.refresh()
+        toast.success('Saved successfully!')
       },
-    })
-
-    toast.promise(promise, {
-      loading: 'Saving...',
-      success: 'Saved successfully!',
-      error: error => error.message || 'Unknown error.',
+      onError: (ctx) => {
+        toast.error(ctx.error.message || 'Unknown error.')
+      },
     })
   }
 
   return (
     <SettingsCard title="Profile Information">
+      <AvatarCropper user={user} />
       <div className="grid md:grid-cols-12 items-center gap-2.5 p-4 md:px-6 border-b">
         <span className="col-span-5 text-xs md:text-sm ml-0.5">Display Name</span>
         <Input
