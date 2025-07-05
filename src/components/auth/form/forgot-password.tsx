@@ -7,12 +7,12 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import type z from 'zod'
 
+import { FormInput } from '@/components/form/input'
+import { FormSubmitButton } from '@/components/form/submit-button'
 import { Form } from '@/components/shadcn/form'
 import { requestPasswordReset } from '@/lib/auth/client'
 
-import { FormInput } from './input'
 import { forgotPasswordSchema } from './schema'
-import { FormSubmitButton } from './submit-button'
 
 export function ForgotPasswordForm() {
   const router = useRouter()

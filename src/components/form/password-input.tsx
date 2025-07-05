@@ -26,7 +26,7 @@ export function FormPasswordInput({
   name,
   label = 'Password',
   forgotPasswordLink,
-  showToggleButton = true,
+  showToggleButton = false,
   ...props
 }: FormPasswordInputProps) {
   const [showPassword, setShowPassword] = useState(false)

@@ -7,15 +7,15 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import type { z } from 'zod'
 
+import { FormInput } from '@/components/form/input'
+import { FormPasswordInput } from '@/components/form/password-input'
+import { FormSubmitButton } from '@/components/form/submit-button'
 import { Alert, AlertDescription, AlertTitle } from '@/components/shadcn/alert'
 import { Form } from '@/components/shadcn/form'
 import { signUp } from '@/lib/auth/client'
 import { cn } from '@/lib/cn'
 
-import { FormInput } from './input'
-import { FormPasswordInput } from './password-input'
 import { signUpSchema } from './schema'
-import { FormSubmitButton } from './submit-button'
 
 export function SignUpForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -85,15 +85,13 @@ export function SignUpForm() {
           label="Email"
           placeholder="you@example.com"
         />
-
         <FormPasswordInput
           form={form}
           name="password"
-          label="Password"
           placeholder="••••••••"
+          showToggleButton={true}
           onFocus={() => setShowPasswordRequirements(true)}
         />
-
         {showPasswordRequirements && (
           <div className={cn(
             'animate-in duration-500 fade-in slide-in-from-top-3',
@@ -112,7 +110,6 @@ export function SignUpForm() {
             ))}
           </div>
         )}
-
         <FormSubmitButton isSubmitting={isSubmitting} submittingText="Sign Up">
           Sign Up
         </FormSubmitButton>

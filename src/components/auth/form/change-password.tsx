@@ -7,17 +7,17 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import type z from 'zod'
 
+import { FormPasswordInput } from '@/components/form/password-input'
+import { FormSubmitButton } from '@/components/form/submit-button'
 import { Form } from '@/components/shadcn/form'
 import { Skeleton } from '@/components/shadcn/skeleton'
 import { changePassword, useSession } from '@/lib/auth/client'
 
-import { FormPasswordInput } from './password-input'
 import { changePasswordSchema } from './schema'
-import { FormSubmitButton } from './submit-button'
 
 export function ChangePasswordForm() {
-  const { data: session, isPending } = useSession()
   const router = useRouter()
+  const { data: session, isPending } = useSession()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const form = useForm<z.infer<typeof changePasswordSchema>>({
     resolver: zodResolver(changePasswordSchema),
@@ -73,16 +73,15 @@ export function ChangePasswordForm() {
         <FormPasswordInput
           form={form}
           name="currentPassword"
-          label="Current password"
+          label="Current Password"
           placeholder="••••••••"
           showToggleButton={false}
         />
         <FormPasswordInput
           form={form}
           name="newPassword"
-          label="New password"
+          label="New Password"
           placeholder="••••••••"
-          showToggleButton={false}
         />
         <FormSubmitButton isSubmitting={isSubmitting} submittingText="Saving...">
           Save New Password

@@ -6,13 +6,13 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import type { z } from 'zod'
 
+import { FormInput } from '@/components/form/input'
+import { FormPasswordInput } from '@/components/form/password-input'
+import { FormSubmitButton } from '@/components/form/submit-button'
 import { Form } from '@/components/shadcn/form'
 import { signIn } from '@/lib/auth/client'
 
-import { FormInput } from './input'
-import { FormPasswordInput } from './password-input'
 import { signInSchema } from './schema'
-import { FormSubmitButton } from './submit-button'
 
 export function SignInForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -61,15 +61,12 @@ export function SignInForm() {
           label="Email"
           placeholder="you@example.com"
         />
-
         <FormPasswordInput
           form={form}
           name="password"
-          label="Password"
           placeholder="••••••••"
           forgotPasswordLink="/forgot-password"
         />
-
         <FormSubmitButton isSubmitting={isSubmitting} submittingText="Sign In">
           Sign In
         </FormSubmitButton>

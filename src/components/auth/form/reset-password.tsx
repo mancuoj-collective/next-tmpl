@@ -8,12 +8,12 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import type z from 'zod'
 
+import { FormPasswordInput } from '@/components/form/password-input'
+import { FormSubmitButton } from '@/components/form/submit-button'
 import { Form } from '@/components/shadcn/form'
 import { resetPassword } from '@/lib/auth/client'
 
-import { FormPasswordInput } from './password-input'
 import { resetPasswordSchema } from './schema'
-import { FormSubmitButton } from './submit-button'
 
 export function ResetPasswordForm() {
   const router = useRouter()
@@ -58,7 +58,6 @@ export function ResetPasswordForm() {
           form={form}
           name="password"
           placeholder="••••••••"
-          showToggleButton={false}
         />
         <FormSubmitButton isSubmitting={isSubmitting} submittingText="Saving...">
           Save New Password
