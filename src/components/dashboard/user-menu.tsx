@@ -39,7 +39,7 @@ export function UserMenu() {
       <DropdownMenuTrigger className="outline-none">
         <Avatar className="size-8 rounded-full border shadow select-none">
           <AvatarImage src={user.image || undefined} alt={user.name || 'Avatar'} />
-          <AvatarFallback className="text-sm">{user.name?.charAt(0).toUpperCase() || 'U'}</AvatarFallback>
+          <AvatarFallback className="text-sm">{user.name?.charAt(0)?.toUpperCase() || 'U'}</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-54" align="end" sideOffset={8}>
