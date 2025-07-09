@@ -29,8 +29,8 @@
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.522.0",
-    "motion": "^12.23.0",
-    "next": "15.4.0-canary.116",
+    "motion": "^12.23.1",
+    "next": "15.4.0-canary.120",
     "next-themes": "^0.4.6",
     "nuqs": "^2.4.3",
     "prettier": "^3.6.2",
@@ -48,14 +48,14 @@
     "tailwind-merge": "^3.3.1",
     "ua-parser-js": "^2.0.4",
     "vaul": "^1.1.2",
-    "zod": "^3.25.75"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.2.10",
     "@iconify-json/tabler": "^1.2.19",
     "@iconify/tailwind4": "^1.0.6",
     "@tailwindcss/postcss": "^4.1.11",
-    "@types/node": "^24.0.10",
+    "@types/node": "^24.0.12",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "drizzle-kit": "^0.31.4",
