@@ -137,7 +137,9 @@ export function AvatarCropper({ user }: AvatarCropperProps) {
     <div className="flex justify-between items-center gap-2.5 p-4 md:px-6 border-b">
       <div className="flex flex-col gap-1 ml-0.5">
         <span className="text-xs md:text-sm">Avatar</span>
-        <span className="text-xs text-muted-foreground hidden md:block">Click on the avatar to upload a custom one from your files.</span>
+        <span className="text-xs text-muted-foreground hidden md:block">
+          Click on the avatar to upload a custom one from your files (max 500KB).
+        </span>
       </div>
       <Avatar
         {...getRootProps()}

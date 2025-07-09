@@ -91,7 +91,7 @@ function DeleteAccountButton({ user }: { user: User }) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="alert" size="xs" className="ml-11">
+        <Button variant="alert" size="xs" className="ml-9.5 md:ml-11">
           Request to delete account
         </Button>
       </DialogTrigger>
