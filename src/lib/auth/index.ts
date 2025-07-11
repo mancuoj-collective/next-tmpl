@@ -3,6 +3,9 @@ import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 import { nextCookies } from 'better-auth/next-js'
 
 import { env } from '@/config/env'
+import { ConfirmEmail } from '@/emails/confirm'
+import { ResetPasswordEmail } from '@/emails/reset-password'
+import { VerifyDeletionEmail } from '@/emails/verify-deletion'
 import { db } from '@/lib/db'
 import * as schema from '@/lib/db/schema'
 import { resend } from '@/lib/resend'
@@ -24,8 +27,10 @@ export const auth = betterAuth({
         from: env.RESEND_EMAIL_FROM,
         to: user.email,
         subject: 'Reset your password',
-        // TODO: react email template
-        html: `<a href="${url}">Reset your password</a>`,
+        react: ResetPasswordEmail({
+          email: user.email,
+          link: url,
+        }),
       })
     },
   },
@@ -38,8 +43,10 @@ export const auth = betterAuth({
         from: env.RESEND_EMAIL_FROM,
         to: user.email,
         subject: 'Confirm your email address',
-        // TODO: react email template
-        html: `<a href="${url}">Confirm your email address</a>`,
+        react: ConfirmEmail({
+          email: user.email,
+          link: url,
+        }),
       })
     },
   },
@@ -57,8 +64,10 @@ export const auth = betterAuth({
           from: env.RESEND_EMAIL_FROM,
           to: user.email,
           subject: 'Verify your account deletion',
-          // TODO: react email template
-          html: `<a href="${url}">Click to verify your account deletion</a>`,
+          react: VerifyDeletionEmail({
+            email: user.email,
+            link: url,
+          }),
         })
       },
     },
