@@ -40,8 +40,8 @@ export function SignUpForm() {
     { label: '72 characters or less', isMet: password.length <= 72, show: password.length > 72 },
   ]
 
-  function onSubmit(values: z.infer<typeof signUpSchema>) {
-    const promise = signUp.email({
+  async function onSubmit(values: z.infer<typeof signUpSchema>) {
+    await signUp.email({
       email: values.email,
       password: values.password,
       name: values.email,
@@ -49,18 +49,16 @@ export function SignUpForm() {
       onRequest: () => {
         setIsSubmitting(true)
       },
-      onSuccess: () => {
-        setIsSubmitted(true)
-      },
-      onError: () => {
+      onResponse: () => {
         setIsSubmitting(false)
       },
-    })
-
-    toast.promise(promise, {
-      loading: 'Signing up...',
-      success: 'Signed up successfully!',
-      error: error => error.message || 'Unknown error.',
+      onSuccess: () => {
+        setIsSubmitted(true)
+        toast.success('Signed up successfully!')
+      },
+      onError: (ctx) => {
+        toast.error(ctx.error.message || 'Unknown error.')
+      },
     })
   }
 
