@@ -2,6 +2,7 @@ import '@/styles/globals.css'
 
 import type { Metadata } from 'next'
 
+import { ReactScan } from '@/components/react-scan'
 import { fontMono, fontSans, fontSerif } from '@/config/font'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/cn'
@@ -45,6 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <ReactScan />
       <body
         className={cn(
           fontSans.variable,
