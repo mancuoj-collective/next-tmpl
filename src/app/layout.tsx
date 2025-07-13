@@ -45,9 +45,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script src="https://unpkg.com/react-scan/dist/auto.global.js" />
-      </head>
       <body
         className={cn(
           fontSans.variable,
