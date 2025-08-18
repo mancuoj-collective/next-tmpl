@@ -77,5 +77,8 @@ export const auth = betterAuth({
       enabled: false,
     },
   },
+  telemetry: {
+    enabled: false,
+  },
   plugins: [nextCookies()],
 })

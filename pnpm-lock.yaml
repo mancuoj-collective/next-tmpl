@@ -12,8 +12,8 @@ importers:
         specifier: ^5.2.1
         version: 5.2.1(react-hook-form@7.62.0(react@19.1.1))
       '@libsql/client':
-        specifier: ^0.15.11
-        version: 0.15.11
+        specifier: ^0.15.12
+        version: 0.15.12
       '@react-email/components':
         specifier: ^0.5.0
         version: 0.5.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -43,7 +43,7 @@ importers:
         version: 4.1.0
       drizzle-orm:
         specifier: ^0.44.4
-        version: 0.44.4(@libsql/client@0.15.11)(@types/pg@8.15.4)(kysely@0.28.5)(pg@8.16.0)
+        version: 0.44.4(@libsql/client@0.15.12)(@types/pg@8.15.4)(kysely@0.28.5)(pg@8.16.0)
       embla-carousel-react:
         specifier: ^8.6.0
         version: 8.6.0(react@19.1.1)
@@ -57,14 +57,14 @@ importers:
         specifier: ^12.23.12
         version: 12.23.12(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       next:
-        specifier: 15.4.6
-        version: 15.4.6(@babel/core@7.27.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 15.4.2-canary.52
+        version: 15.4.2-canary.52(@babel/core@7.27.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       nuqs:
         specifier: ^2.4.3
-        version: 2.4.3(next@15.4.6(@babel/core@7.27.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
+        version: 2.4.3(next@15.4.2-canary.52(@babel/core@7.27.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -900,11 +900,11 @@ packages:
   '@levischuck/tiny-cbor@0.2.11':
     resolution: {integrity: sha512-llBRm4dT4Z89aRsm6u2oEZ8tfwL/2l6BwpZ7JcyieouniDECM5AqNgr/y08zalEIvW3RSK4upYyybDcmjXqAow==}
 
-  '@libsql/client@0.15.11':
-    resolution: {integrity: sha512-JB8RWRs+cAbHX35/dQ9wD3m4W5EVGevq1fFqiHKTT4Pa5HR7WrcGRVT+8NL2M7gtTlOvyPh9zzms2DPLBCswig==}
+  '@libsql/client@0.15.12':
+    resolution: {integrity: sha512-JIqB0XsNrqYqBQZuhcgZdTcQoNOoQ5AMF+1yxc7vcZrLtm42QJwRazmTuBfyDwtWASEmVgjxeaLF4NT1iyVX8g==}
 
-  '@libsql/core@0.15.11':
-    resolution: {integrity: sha512-DQDYnEhCSYOsx30ASlOGuOqcQhvwELhOS2qM4dnIP+ZhKki2epZU1j5VZSNeQlrQXHkByMcWBy+wt7tBNx/9uA==}
+  '@libsql/core@0.15.12':
+    resolution: {integrity: sha512-S3tF6885ZizVjfym7f8SevL2VId/+DzxiKmP5zFbrhA8oMLh2XH8bYXChmhab7o9qUSHx+XjK4jCFpUwR5g+Ig==}
 
   '@libsql/darwin-arm64@0.5.15':
     resolution: {integrity: sha512-BD4c4WHUu988PmJCtF1WNKoSmY4nAg4T6ZRaigt6fKY2qlS/+9uSB8LSqIIq3WwqxQm9SuJijMGMKDoH6dEFdA==}
@@ -967,53 +967,53 @@ packages:
   '@neon-rs/load@0.0.4':
     resolution: {integrity: sha512-kTPhdZyTQxB+2wpiRcFWrDcejc4JI6tkPuS7UZCG4l6Zvc5kU/gGQ/ozvHTh1XR5tS+UlfAfGuPajjzQjCiHCw==}
 
-  '@next/env@15.4.6':
-    resolution: {integrity: sha512-yHDKVTcHrZy/8TWhj0B23ylKv5ypocuCwey9ZqPyv4rPdUdRzpGCkSi03t04KBPyU96kxVtUqx6O3nE1kpxASQ==}
+  '@next/env@15.4.2-canary.52':
+    resolution: {integrity: sha512-XftBBe1BDGq1L7xKIyRPzX8RZUD9UlIdcjFmBG5+IXG6du1cjMHHhxouXsHRCRmUeZfaChEX91LLfl4gKK1+YQ==}
 
-  '@next/swc-darwin-arm64@15.4.6':
-    resolution: {integrity: sha512-667R0RTP4DwxzmrqTs4Lr5dcEda9OxuZsVFsjVtxVMVhzSpo6nLclXejJVfQo2/g7/Z9qF3ETDmN3h65mTjpTQ==}
+  '@next/swc-darwin-arm64@15.4.2-canary.52':
+    resolution: {integrity: sha512-99gUcFobDiECv7Vm40QWWi5sDanj5Ma9l7dYcqkQyTsszi63W9gCHymbjvHdf2HqtBVjHw/Z3MgRmHtsdgjLsw==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@next/swc-darwin-x64@15.4.6':
-    resolution: {integrity: sha512-KMSFoistFkaiQYVQQnaU9MPWtp/3m0kn2Xed1Ces5ll+ag1+rlac20sxG+MqhH2qYWX1O2GFOATQXEyxKiIscg==}
+  '@next/swc-darwin-x64@15.4.2-canary.52':
+    resolution: {integrity: sha512-Cj/kcRwOnHNF4qDAWyYP6bGoY5HK+Zyk3H+BqDXwTtdkGMc9gECgWd/7lMUIEoKvD3A7uZYmDK0ZV1MnqsUslQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
 
-  '@next/swc-linux-arm64-gnu@15.4.6':
-    resolution: {integrity: sha512-PnOx1YdO0W7m/HWFeYd2A6JtBO8O8Eb9h6nfJia2Dw1sRHoHpNf6lN1U4GKFRzRDBi9Nq2GrHk9PF3Vmwf7XVw==}
+  '@next/swc-linux-arm64-gnu@15.4.2-canary.52':
+    resolution: {integrity: sha512-WUBYVtOZXtlOeD3CiIe08kOskP/7HyeWf6T4joD7cPMt+als6OGXbUoSZwVrelziKRfX6r4EQJSw/jHAO1R96w==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@next/swc-linux-arm64-musl@15.4.6':
-    resolution: {integrity: sha512-XBbuQddtY1p5FGPc2naMO0kqs4YYtLYK/8aPausI5lyOjr4J77KTG9mtlU4P3NwkLI1+OjsPzKVvSJdMs3cFaw==}
+  '@next/swc-linux-arm64-musl@15.4.2-canary.52':
+    resolution: {integrity: sha512-+a/7d4WgMq47m5vN1NZ2pyW3/7yYj7ecjyFjg/JLKbfdW23/QSv5E3l4ACVWRzL/BfvcreZ16+PqXBYY4BaLow==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
 
-  '@next/swc-linux-x64-gnu@15.4.6':
-    resolution: {integrity: sha512-+WTeK7Qdw82ez3U9JgD+igBAP75gqZ1vbK6R8PlEEuY0OIe5FuYXA4aTjL811kWPf7hNeslD4hHK2WoM9W0IgA==}
+  '@next/swc-linux-x64-gnu@15.4.2-canary.52':
+    resolution: {integrity: sha512-Cx7AqOnxi1XrZvHWQoroXp0mUFa8FA/J4JPdZeQunyD2zliAYBXn7a/uLD7aznOwBPUKCrf9YVCQNdXe5KDG2w==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@next/swc-linux-x64-musl@15.4.6':
-    resolution: {integrity: sha512-XP824mCbgQsK20jlXKrUpZoh/iO3vUWhMpxCz8oYeagoiZ4V0TQiKy0ASji1KK6IAe3DYGfj5RfKP6+L2020OQ==}
+  '@next/swc-linux-x64-musl@15.4.2-canary.52':
+    resolution: {integrity: sha512-CtLNhoowEbEnETlplMhdzmGrl4OnazA6YlAZDKTJQh2rZooASwCv8DpTz3OyqRjiI3mZ4IBKkf99lhzVI1jnKg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
 
-  '@next/swc-win32-arm64-msvc@15.4.6':
-    resolution: {integrity: sha512-FxrsenhUz0LbgRkNWx6FRRJIPe/MI1JRA4W4EPd5leXO00AZ6YU8v5vfx4MDXTvN77lM/EqsE3+6d2CIeF5NYg==}
+  '@next/swc-win32-arm64-msvc@15.4.2-canary.52':
+    resolution: {integrity: sha512-kP8h8ysFoZmHyO+8Cw2r1Q3kN2d8XaD7XbeIMerpe+suoEitt6+tPTl92+n001yi8EMI5B3JxJ6JwPQZ0++ckQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
 
-  '@next/swc-win32-x64-msvc@15.4.6':
-    resolution: {integrity: sha512-T4ufqnZ4u88ZheczkBTtOF+eKaM14V8kbjud/XrAakoM5DKQWjW09vD6B9fsdsWS2T7D5EY31hRHdta7QKWOng==}
+  '@next/swc-win32-x64-msvc@15.4.2-canary.52':
+    resolution: {integrity: sha512-48PFmwZkosFsP56ssd1hCG7CXHnt5Ix0hCiU1jJ8cuEQOc5CiXUdihNFBYGPCjoYCTUYggcqpvu4NgyGNxK33g==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
@@ -3598,8 +3598,8 @@ packages:
       react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
       react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
 
-  next@15.4.6:
-    resolution: {integrity: sha512-us++E/Q80/8+UekzB3SAGs71AlLDsadpFMXVNM/uQ0BMwsh9m3mr0UNQIfjKed8vpWXsASe+Qifrnu1oLIcKEQ==}
+  next@15.4.2-canary.52:
+    resolution: {integrity: sha512-jR0ro18RatdNfzSKzxHB+6nSG4EJodN9uYvjnvHC7lb3x+pxy4gz3YylZxEwdOZw6i/rK3C0gjG/KSoP2jt1og==}
     engines: {node: ^18.18.0 || ^19.8.0 || >= 20.0.0}
     hasBin: true
     peerDependencies:
@@ -5083,9 +5083,9 @@ snapshots:
 
   '@levischuck/tiny-cbor@0.2.11': {}
 
-  '@libsql/client@0.15.11':
+  '@libsql/client@0.15.12':
     dependencies:
-      '@libsql/core': 0.15.11
+      '@libsql/core': 0.15.12
       '@libsql/hrana-client': 0.7.0
       js-base64: 3.7.7
       libsql: 0.5.15
@@ -5094,7 +5094,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@libsql/core@0.15.11':
+  '@libsql/core@0.15.12':
     dependencies:
       js-base64: 3.7.7
 
@@ -5154,30 +5154,30 @@ snapshots:
 
   '@neon-rs/load@0.0.4': {}
 
-  '@next/env@15.4.6': {}
+  '@next/env@15.4.2-canary.52': {}
 
-  '@next/swc-darwin-arm64@15.4.6':
+  '@next/swc-darwin-arm64@15.4.2-canary.52':
     optional: true
 
-  '@next/swc-darwin-x64@15.4.6':
+  '@next/swc-darwin-x64@15.4.2-canary.52':
     optional: true
 
-  '@next/swc-linux-arm64-gnu@15.4.6':
+  '@next/swc-linux-arm64-gnu@15.4.2-canary.52':
     optional: true
 
-  '@next/swc-linux-arm64-musl@15.4.6':
+  '@next/swc-linux-arm64-musl@15.4.2-canary.52':
     optional: true
 
-  '@next/swc-linux-x64-gnu@15.4.6':
+  '@next/swc-linux-x64-gnu@15.4.2-canary.52':
     optional: true
 
-  '@next/swc-linux-x64-musl@15.4.6':
+  '@next/swc-linux-x64-musl@15.4.2-canary.52':
     optional: true
 
-  '@next/swc-win32-arm64-msvc@15.4.6':
+  '@next/swc-win32-arm64-msvc@15.4.2-canary.52':
     optional: true
 
-  '@next/swc-win32-x64-msvc@15.4.6':
+  '@next/swc-win32-x64-msvc@15.4.2-canary.52':
     optional: true
 
   '@noble/ciphers@0.6.0': {}
@@ -6786,9 +6786,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.44.4(@libsql/client@0.15.11)(@types/pg@8.15.4)(kysely@0.28.5)(pg@8.16.0):
+  drizzle-orm@0.44.4(@libsql/client@0.15.12)(@types/pg@8.15.4)(kysely@0.28.5)(pg@8.16.0):
     optionalDependencies:
-      '@libsql/client': 0.15.11
+      '@libsql/client': 0.15.12
       '@types/pg': 8.15.4
       kysely: 0.28.5
       pg: 8.16.0
@@ -7790,9 +7790,9 @@ snapshots:
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
 
-  next@15.4.6(@babel/core@7.27.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  next@15.4.2-canary.52(@babel/core@7.27.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
-      '@next/env': 15.4.6
+      '@next/env': 15.4.2-canary.52
       '@swc/helpers': 0.5.15
       caniuse-lite: 1.0.30001718
       postcss: 8.4.31
@@ -7800,14 +7800,14 @@ snapshots:
       react-dom: 19.1.1(react@19.1.1)
       styled-jsx: 5.1.6(@babel/core@7.27.4)(react@19.1.1)
     optionalDependencies:
-      '@next/swc-darwin-arm64': 15.4.6
-      '@next/swc-darwin-x64': 15.4.6
-      '@next/swc-linux-arm64-gnu': 15.4.6
-      '@next/swc-linux-arm64-musl': 15.4.6
-      '@next/swc-linux-x64-gnu': 15.4.6
-      '@next/swc-linux-x64-musl': 15.4.6
-      '@next/swc-win32-arm64-msvc': 15.4.6
-      '@next/swc-win32-x64-msvc': 15.4.6
+      '@next/swc-darwin-arm64': 15.4.2-canary.52
+      '@next/swc-darwin-x64': 15.4.2-canary.52
+      '@next/swc-linux-arm64-gnu': 15.4.2-canary.52
+      '@next/swc-linux-arm64-musl': 15.4.2-canary.52
+      '@next/swc-linux-x64-gnu': 15.4.2-canary.52
+      '@next/swc-linux-x64-musl': 15.4.2-canary.52
+      '@next/swc-win32-arm64-msvc': 15.4.2-canary.52
+      '@next/swc-win32-x64-msvc': 15.4.2-canary.52
       sharp: 0.34.3
     transitivePeerDependencies:
       - '@babel/core'
@@ -7833,12 +7833,12 @@ snapshots:
       semver: 7.7.2
       validate-npm-package-license: 3.0.4
 
-  nuqs@2.4.3(next@15.4.6(@babel/core@7.27.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1):
+  nuqs@2.4.3(next@15.4.2-canary.52(@babel/core@7.27.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1):
     dependencies:
       mitt: 3.0.1
       react: 19.1.1
     optionalDependencies:
-      next: 15.4.6(@babel/core@7.27.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      next: 15.4.2-canary.52(@babel/core@7.27.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
 
   object-assign@4.1.1: {}
 
