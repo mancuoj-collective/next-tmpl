@@ -17,7 +17,7 @@
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@libsql/client": "^0.15.15",
-    "@react-email/components": "^0.5.7",
+    "@react-email/components": "^1.0.0",
     "@shined/react-use": "^1.13.0",
     "@t3-oss/env-nextjs": "^0.13.8",
     "@types/ua-parser-js": "^0.7.39",
